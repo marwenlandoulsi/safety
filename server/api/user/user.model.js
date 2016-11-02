@@ -10,9 +10,9 @@ var UserSchema = new Schema({
   firstname: String,
   lastname: String,
   age: Number,
-  firstContact:Number,
-  secondContact:Number,
-  thirdContact:Number,
+  firstContact: Number,
+  secondContact: Number,
+  thirdContact: Number,
   lastCheked: {
     type: [Number],
     index: '2dsphere'

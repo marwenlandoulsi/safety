@@ -64,7 +64,7 @@ export default function(app) {
    * Lusca - express server security
    * https://github.com/krakenjs/lusca
    */
-  if(env !== 'test' && !process.env.SAUCE_USERNAME) {
+  /*if(env !== 'test' && !process.env.SAUCE_USERNAME) {
     app.use(lusca({
       csrf: {
         angular: true
@@ -77,7 +77,7 @@ export default function(app) {
       },
       xssProtection: true
     }));
-  }
+  }*/
 
   if(env === 'development') {
     const webpackDevMiddleware = require('webpack-dev-middleware');

@@ -30,6 +30,14 @@ var reviewSchema = new mongoose.Schema({
 });
 
 var AccidentSchema = new mongoose.Schema({
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  createdOn: {
+    type: Date,
+    "default": Date.now
+  },
   name:String,
   address: String,
   coords: {
