@@ -39,7 +39,7 @@ Thing.find({}).remove()
     });
   });
 
-User.find({}).remove()
+/*User.find({}).remove()
   .then(() => {
     User.create({
       provider: 'local',
@@ -65,9 +65,10 @@ User.find({}).remove()
             email: 'la@gi.com',
             role: 'user',
             password: '0000',
-            provider: 'local',
+            provider: 'local'
         })
     .then(() => {
       console.log('finished populating users');
     });
   });
+*/
