@@ -3,10 +3,12 @@
 import mongoose from 'mongoose';
 
 var mediaSchema = mongoose.Schema({
-  title: String,
+  name: String,
   path: String,
   type: String,
-  upload_date: {type: Date, default: Date.now},
+  uploadDate: {
+    type: Date,
+    default: Date.now},
   //votes: {type: Number, 'default': 0},
 
 });
@@ -21,12 +23,15 @@ var reviewSchema = new mongoose.Schema({
     min: 0,
     max: 5
   },
-  reviewText: {type: String, required: false},
+  reviewText: {
+    type: String,
+    required: false
+  },
   createdOn: {
     type: Date,
-    "default": Date.now
+    default: Date.now
   },
-  medias : [mediaSchema]
+  medias: [mediaSchema]
 });
 
 var AccidentSchema = new mongoose.Schema({
@@ -36,9 +41,9 @@ var AccidentSchema = new mongoose.Schema({
   },
   createdOn: {
     type: Date,
-    "default": Date.now
+    default: Date.now
   },
-  name:String,
+  name: String,
   address: String,
   coords: {
     type: [Number],

@@ -7,8 +7,26 @@ import mongoose, {Schema} from 'mongoose';
 const authTypes = ['github', 'twitter', 'facebook', 'google'];
 
 var UserSchema = new Schema({
-  firstname: String,
-  lastname: String,
+  firstName: {
+    type: String,
+    required() {
+      if(authTypes.indexOf(this.provider) === -1) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  },
+  lastName: {
+    type: String,
+    required() {
+      if(authTypes.indexOf(this.provider) === -1) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  },
   age: Number,
   firstContact: Number,
   secondContact: Number,

@@ -13,6 +13,7 @@
 import jsonpatch from 'fast-json-patch';
 import Accident from './accident.model';
 
+
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
   return function(entity) {
@@ -63,6 +64,8 @@ function handleError(res, statusCode) {
   };
 }
 
+
+
 // Gets a list of Accidents
 export function index(req, res) {
   return Accident.find().exec()
@@ -78,9 +81,62 @@ export function show(req, res) {
     .catch(handleError(res));
 }
 
+
 // Creates a new Accident in the DB
 export function create(req, res) {
-  return Accident.create(req.body)
+  var newAccident = new Accident(req.body);
+  newAccident.createdBy = req.user.id;
+
+  console.log(req.files[0]);
+  var medias = [];
+  var newReviews = {
+    saverity: req.body.saverity,
+    author: req.user.id,
+    reviewText: req.body.reviewText,
+    medias: medias
+  };
+
+  if (!req.files){
+    console.log("no files to upload");
+  }
+  else {
+    var path1 = './uploads/';
+    for(var i= 0; i < req.files.length; i++)
+    {
+      console.log('ok');
+      if(req.files[i].mimetype !== 'image/jpg' && req.files[i].mimetype !== 'image/jpeg'
+        && req.files[i].mimetype !== 'image/png' && req.files[i].mimetype !== 'image/gif'
+        &&  req.files[i].mimetype !== 'video/mpeg' &&  req.files[i].mimetype !== 'video/mp4'
+        &&  req.files[i].mimetype !== 'video/quicktime' &&  req.files[i].mimetype !== 'video/x-ms-wmv'
+        &&  req.files[i].mimetype !== 'video/x-msvideo' &&  req.files[i].mimetype !== 'video/x-flv' )
+      {
+        sendJSONresponse(res, 400, 'error mimetype');
+        return;
+      }
+      else if (req.files[i].mimetype == 'image/jpg' ||  req.files[i].mimetype == 'image/jpeg'
+        ||  req.files[i].mimetype == 'image/png' || req.files[i].mimetype == 'image/gif' )
+      {
+        var newMedias={};
+        newMedias.name =  req.files[i].filename;
+        newMedias.type= 'picture';
+        newMedias.path = path1  + req.files[i].filename;
+        newReviews.medias.push(newMedias);
+      }
+      else if (req.files[i].mimetype == 'video/mpeg' ||  req.files[i].mimetype == 'video/mp4'
+        ||  req.files[i].mimetype == 'video/quicktime' ||  req.files[i].mimetype == 'video/x-ms-wmv'
+        ||  req.files[i].mimetype == 'video/x-msvideo' ||  req.files[i].mimetype == 'video/x-flv' )
+      {
+        var newMedias={};
+        newMedias.name =  req.files[i].filename;
+        newMedias.type= 'video';
+        newMedias.path = path1  + req.files[i].filename;
+        newReviews.medias.push(newMedias);
+      }
+    }
+  }
+  newAccident.reviews.push(newReviews);
+
+  return Accident.create(newAccident)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
