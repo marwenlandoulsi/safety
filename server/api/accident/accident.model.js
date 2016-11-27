@@ -9,8 +9,6 @@ var mediaSchema = mongoose.Schema({
   uploadDate: {
     type: Date,
     default: Date.now},
-  //votes: {type: Number, 'default': 0},
-
 });
 
 var reviewSchema = new mongoose.Schema({
@@ -49,7 +47,6 @@ var AccidentSchema = new mongoose.Schema({
     type: [Number],
     index: '2dsphere'
   },
-  // openingTimes: [openingTimeSchema],
   reviews: [reviewSchema],
   active: Boolean
 });

@@ -52,13 +52,21 @@ export function create(req, res) {
  */
 export function show(req, res, next) {
   var userId = req.params.id;
-
+  var showUser = {};
   return User.findById(userId).exec()
     .then(user => {
       if(!user) {
         return res.status(404).end();
       }
-      res.json(user.profile);
+      showUser={
+        _id: user._id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        role: user.role
+      }
+      res.json(showUser);
+      //res.json(user.profile);
     })
     .catch(err => next(err));
 }
@@ -119,4 +127,24 @@ export function me(req, res, next) {
  */
 export function authCallback(req, res) {
   res.redirect('/');
+}
+// change role user
+export function ChangeRole(req, res) {
+  var userId = req.params.id;
+  var newRole = String(req.body.newRole);
+
+  return User.findById(userId).exec()
+    .then(user => {
+      if(user) {
+        user.role = newRole;
+
+        return user.save()
+          .then(() => {
+            res.json(user);
+          })
+          .catch(validationError(res));
+      } else {
+        return res.status(403).end();
+      }
+    });
 }

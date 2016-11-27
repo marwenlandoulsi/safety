@@ -35,10 +35,6 @@ var UserSchema = new Schema({
     type: [Number],
     index: '2dsphere'
   },
-  blood: {
-    type: String,
-    enum: ['O-', 'O+', 'A-', 'A+', 'B-', 'B+', 'AB+', 'AB-']
-  },
   email: {
     type: String,
     lowercase: true,
@@ -50,9 +46,14 @@ var UserSchema = new Schema({
       }
     }
   },
+  blood: {
+    type: String,
+    enum: ['O-', 'O+', 'A-', 'A+', 'B-', 'B+', 'AB+', 'AB-']
+  },
   role: {
     type: String,
-    default: 'user'
+    default: 'user',
+    enum: ['user', 'police', 'admin', 'rescuer']
   },
   password: {
     type: String,
