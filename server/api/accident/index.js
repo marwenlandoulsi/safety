@@ -2,6 +2,7 @@
 
 var express = require('express');
 var controller = require('./accident.controller');
+var reviewController = require('./review.controller');
 import * as auth from '../../auth/auth.service';
 import crypto from 'crypto';
 var router = express.Router();
@@ -28,9 +29,16 @@ router.get('/:id', controller.show);
 router.post('/', auth.isAuthenticated(), uploader.array('upload', 10), controller.create);
 //update accident
 router.put('/:id', auth.hasRole('police'), controller.upsert);
-//add medias to accident
 router.patch('/:id', auth.isAuthenticated(), controller.patch);
 router.delete('/:id', auth.hasRole('police'), controller.destroy);
 
+//add review
+router.post('/:accidentid/reviews', auth.isAuthenticated(), uploader.array('upload', 10), reviewController.create);
+//get one review
+router.get('/:accidentid/reviews/:reviewid', reviewController.readOne);
+//update one review
+router.put('/:accidentid/reviews/:reviewid', auth.isAuthenticated(), reviewController.updateOne);
+//delete one review
+router.delete('/:accidentid/reviews/:reviewid', auth.isAuthenticated(), reviewController.deleteOne);
 
 module.exports = router;
