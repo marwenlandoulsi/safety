@@ -91,6 +91,8 @@ export function create(req, res) {
   }*/
   if (!newAccident.active){
     newAccident.active = false;
+  }else{
+    newAccident.active = true;
   }
   if (!newAccident.name){
     newAccident.name = 'accident created automatically';
