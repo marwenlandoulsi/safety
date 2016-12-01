@@ -50,6 +50,10 @@ var UserSchema = new Schema({
     type: String,
     enum: ['O-', 'O+', 'A-', 'A+', 'B-', 'B+', 'AB+', 'AB-']
   },
+  gender: {
+    type: String,
+    enum: ['male', 'female']
+  },
   role: {
     type: String,
     default: 'user',
@@ -82,8 +86,8 @@ UserSchema
   .virtual('profile')
   .get(function() {
     return {
-      firstname: this.firstname,
-      lastname: this.lastname,
+      firstName: this.firstName,
+      lastName: this.lastName,
       role: this.role
     };
   });
