@@ -84,14 +84,20 @@ export function show(req, res) {
 export function create(req, res) {
   var newAccident = new Accident(req.body);
   newAccident.createdBy = req.user.id;
-  if(req.user.role == 'admin' || req.user.role == 'police' || req.body.odb == 1){
+  /*if(req.user.role == 'admin' || req.user.role == 'police' || req.body.odb == 1){
     newAccident.active = true;
   }else{
     newAccident.active = false;
+  }*/
+  if (!newAccident.active){
+    newAccident.active = false;
   }
-  if(!req.body.name) {
-    newAccident.name = 'accident create automatically';
+  if (!newAccident.name){
+    newAccident.name = 'accident created automatically';
   }
+ /* if(!req.body.name) {
+    newAccident.name = 'accident created automatically';
+  }*/
   var medias = [];
   var newReviews = {};
   if(!req.body.saverity && !req.body.reviewText) {
