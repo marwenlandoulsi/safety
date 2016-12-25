@@ -5,8 +5,8 @@ import routing from './main.routes';
 export class MainController {
   $http;
   socket;
-  awesomeThings = [];
-  newThing = '';
+  accidents = [];
+  newAccident = '';
 
   /*@ngInject*/
   constructor($http, $scope, socket) {
@@ -14,29 +14,30 @@ export class MainController {
     this.socket = socket;
 
     $scope.$on('$destroy', function() {
-      socket.unsyncUpdates('thing');
+      socket.unsyncUpdates('accident');
     });
   }
 
   $onInit() {
-    this.$http.get('/api/things')
+    this.$http.get('/api/accident/active')
       .then(response => {
-        this.awesomeThings = response.data;
-        this.socket.syncUpdates('thing', this.awesomeThings);
+        this.accidents = response.data;
+        this.socket.syncUpdates('accident', this.accidents);
+
       });
   }
 
-  addThing() {
-    if(this.newThing) {
-      this.$http.post('/api/things', {
-        name: this.newThing
+  addAccident() {
+    if(this.newAccident) {
+      this.$http.post('/api/accident/', {
+        name: this.newAccident
       });
-      this.newThing = '';
+      this.newAccident = '';
     }
   }
 
-  deleteThing(thing) {
-    this.$http.delete(`/api/things/${thing._id}`);
+  deleteAccident(accident) {
+    this.$http.delete(`/api/accident/${accident._id}`);
   }
 }
 

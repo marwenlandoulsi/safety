@@ -4,14 +4,16 @@
 import angular from 'angular';
 
 type User = {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
 };
 
 export default class SignupController {
   user: User = {
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: ''
   };
@@ -31,7 +33,8 @@ export default class SignupController {
 
     if(form.$valid) {
       return this.Auth.createUser({
-        name: this.user.name,
+        firstName: this.user.firstName,
+        lastName: this.user.lastName,
         email: this.user.email,
         password: this.user.password
       })

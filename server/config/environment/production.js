@@ -12,13 +12,13 @@ module.exports = {
   // Server port
   port: process.env.OPENSHIFT_NODEJS_PORT
     || process.env.PORT
-    || 8080,
+    || 8086,
 
   // MongoDB connection options
   mongo: {
     uri: process.env.MONGODB_URI
       || process.env.MONGOHQ_URL
       || process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME
-      || 'mongodb://localhost/safetyway'
+      || 'mongodb://127.0.0.1/safetyway'
   }
 };

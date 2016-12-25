@@ -6,12 +6,12 @@ import request from 'supertest';
 var newAccident;
 
 describe('Accident API:', function() {
-  describe('GET /api/accidents', function() {
+  describe('GET /api/accident', function() {
     var accidents;
 
     beforeEach(function(done) {
       request(app)
-        .get('/api/accidents')
+        .get('/api/accident')
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
@@ -28,10 +28,10 @@ describe('Accident API:', function() {
     });
   });
 
-  describe('POST /api/accidents', function() {
+  describe('POST /api/accident', function() {
     beforeEach(function(done) {
       request(app)
-        .post('/api/accidents')
+        .post('/api/accident')
         .send({
           name: 'New Accident',
           info: 'This is the brand new accident!!!'
@@ -53,7 +53,7 @@ describe('Accident API:', function() {
     });
   });
 
-  describe('GET /api/accidents/:id', function() {
+  describe('GET /api/accident/:id', function() {
     var accident;
 
     beforeEach(function(done) {
@@ -80,7 +80,7 @@ describe('Accident API:', function() {
     });
   });
 
-  describe('PUT /api/accidents/:id', function() {
+  describe('PUT /api/accident/:id', function() {
     var updatedAccident;
 
     beforeEach(function(done) {
@@ -129,7 +129,7 @@ describe('Accident API:', function() {
     });
   });
 
-  describe('PATCH /api/accidents/:id', function() {
+  describe('PATCH /api/accident/:id', function() {
     var patchedAccident;
 
     beforeEach(function(done) {
@@ -160,7 +160,7 @@ describe('Accident API:', function() {
     });
   });
 
-  describe('DELETE /api/accidents/:id', function() {
+  describe('DELETE /api/accident/:id', function() {
     it('should respond with 204 on successful removal', function(done) {
       request(app)
         .delete(`/api/accidents/${newAccident._id}`)

@@ -1,0 +1,88 @@
+
+<div class="container">
+  <page-header content="vm.pageHeader"></page-header>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <!-- <p class="rating" rating-stars rating="vm.data.location.rating"></p>-->
+          <p>{{$ctrl.accident.address}}</p>
+          <!-- <div class="panel panel-primary">
+             <div class="panel-heading">
+               <h2 class="panel-title">Opening hours</h2>
+             </div>
+             <div class="panel-body">
+               <p ng-repeat="time in vm.data.location.openingTimes" ng-switch on="time.closed">
+                 {{ time.days }} :
+                 <span class="opening-time" ng-switch-when="true">closed</span>
+                 <span class="opening-time" ng-switch-default>{{ time.opening + " - " + time.closing }}</span>
+               </p>
+             </div>
+           </div>-->
+          <!--<div class="panel panel-primary">
+            <div class="panel-heading">
+              <h2 class="panel-title">Facilities</h2>
+            </div>
+            <div class="panel-body">
+              <span class="label label-warning label-facility" ng-repeat="facility in vm.data.location.facilities">
+                <span class="glyphicon glyphicon-ok"></span>
+                {{ facility }}
+              </span>
+            </div>
+          </div>-->
+        </div>
+        <div class="col-xs-12 col-sm-6 location-map">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h2 class="panel-title">Accident map</h2>
+            </div>
+            <div class="panel-body">
+              <img src="http://maps.googleapis.com/maps/api/staticmap?key=AIzaSyDDc9smPTJ3qyEGYBiaWXjMPW1iSbfE8xk&amp;center={{ $ctrl.accident.coords[0] }},{{ $ctrl.accident.coords[1] }}&amp;zoom=17&amp;size=400x350&amp;sensor=false&amp;markers={{ $ctrl.accident.coords[0] }},{{ $ctrl.accident.coords[1] }}&amp;scale=2" class="img-responsive img-rounded">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel panel-primary review-panel">
+
+            <div class="panel-heading">
+
+              <a ng-show="$ctrl.isRescuer() && $ctrl.isPath == false" ng-click="$ctrl.getPDF()"  class="btn btn-default pull-right">
+                Generate report
+              </a>
+              <a target="_blank" ng-show="$ctrl.isPath && $ctrl.isRescuer()" href="{{ $ctrl.pathPdf }}"  class="btn btn-default pull-right">
+                You can Download report Now
+              </a>
+              <a ng-hide="$ctrl.isLoggedIn()" href="/#/login?page={{ $ctrl.currentPath }}" class="btn btn-default pull-right">Login as Police or Rescuer to generate the report</a>
+              <h2 class="panel-title">Observations</h2>
+            </div>
+            <div class="panel-body review-container">
+              <div class="row">
+                <div class="review" ng-repeat="review in $ctrl.accident.reviews | orderBy:'createdOn':true">
+                  <div class="well well-sm review-header" ng-if="review.reviewText">
+                    <span class="reviewAuthor">{{ review.author }}</span>
+                    <small class="reviewTimestamp"> at {{ review.createdOn | date : 'd MMMM yyyy' }}</small>
+                  </div>
+
+                    <p>
+                      {{review.reviewText}}
+                    </p>
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <p class="lead">You are around {{ $ctrl.accident.name }}.</p>
+      <p>If you've been there, please leave a observation to help other people.</p>
+    </div>
+  </div>
+
+</div>

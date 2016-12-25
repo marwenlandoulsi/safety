@@ -4,12 +4,30 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <base href="/">
-    <title>Sefety way</title>
+    <title>Sefety Way</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/assests/bootstrap/css/amelia.bootstrap.css">
+    <link rel="stylesheet" href="/assests/stylesheets/style.css">
+  <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+  <script type="text/javascript">
+    function downloadpdf() {
+      var pdf = new jsPDF();
+      pdf.text(30, 30, 'Hello world!');
+      pdf.save('hello_world.pdf');
+    }
+  </script> -->
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 </head>
 <body>
- welcome to safety way
+<navbar></navbar>
+<md-content ui-view="" layout="column" flex></md-content>
+<footer></footer>
+
+<!-- script -->
+<script type="text/javascript" src="/vendor.bundle.js">
+</script><script type="text/javascript" src="/polyfills.bundle.js"></script>
+<script type="text/javascript" src="/app.bundle.js"></script>
+
 </body>
 </html>

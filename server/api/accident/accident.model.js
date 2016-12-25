@@ -12,10 +12,7 @@ var mediaSchema = mongoose.Schema({
 });
 
 var reviewSchema = new mongoose.Schema({
-  author: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  },
+  author: String,
   saverity: {
     type: Number,
     min: 0,
