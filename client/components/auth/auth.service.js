@@ -3,7 +3,7 @@
 
 class _User {
   _id: string = '';
-  name: string = '';
+  firstName: string = '';
   email: string = '';
   role: string = '';
   $promise = undefined;
@@ -209,6 +209,9 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
       return Auth.hasRoleSync('admin');
     },
 
+    isRescuerSync() {
+      return Auth.hasRoleSync('rescuer');
+    },
     /**
      * Get auth token
      *

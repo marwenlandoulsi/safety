@@ -5,7 +5,7 @@ export default class AdminController {
 
   /*@ngInject*/
   constructor(User) {
-    // Use the User $resource to fetch all users
+    // Use the User $resource to fetch all user
     this.users = User.query();
   }
 

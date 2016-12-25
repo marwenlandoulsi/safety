@@ -72,7 +72,6 @@ var sendJSONresponse = function(res, status, content) {
   res.json(content);
 };
 module.exports.create = function(req, res) {
-  console.log(req.params.accidentid);
       Accident
         .findById(req.params.accidentid)
         .select('reviews')
@@ -95,7 +94,7 @@ var doAddReview = function(req, res, accident, err) {
     var medias = [];
     var newReviews ={
       saverity: req.body.saverity,
-      author: req.user.id,
+      author: req.user.firstName+" "+req.user.lastName,
       reviewText: req.body.reviewText,
       medias: medias
     }

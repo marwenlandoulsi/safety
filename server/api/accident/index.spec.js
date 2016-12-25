@@ -34,7 +34,7 @@ describe('Accident API Router:', function() {
     accidentIndex.should.equal(routerStub);
   });
 
-  describe('GET /api/accidents', function() {
+  describe('GET /api/accident', function() {
     it('should route to accident.controller.index', function() {
       routerStub.get
         .withArgs('/', 'accidentCtrl.index')
@@ -42,7 +42,7 @@ describe('Accident API Router:', function() {
     });
   });
 
-  describe('GET /api/accidents/:id', function() {
+  describe('GET /api/accident/:id', function() {
     it('should route to accident.controller.show', function() {
       routerStub.get
         .withArgs('/:id', 'accidentCtrl.show')
@@ -50,7 +50,7 @@ describe('Accident API Router:', function() {
     });
   });
 
-  describe('POST /api/accidents', function() {
+  describe('POST /api/accident', function() {
     it('should route to accident.controller.create', function() {
       routerStub.post
         .withArgs('/', 'accidentCtrl.create')
@@ -58,7 +58,7 @@ describe('Accident API Router:', function() {
     });
   });
 
-  describe('PUT /api/accidents/:id', function() {
+  describe('PUT /api/accident/:id', function() {
     it('should route to accident.controller.upsert', function() {
       routerStub.put
         .withArgs('/:id', 'accidentCtrl.upsert')
@@ -66,7 +66,7 @@ describe('Accident API Router:', function() {
     });
   });
 
-  describe('PATCH /api/accidents/:id', function() {
+  describe('PATCH /api/accident/:id', function() {
     it('should route to accident.controller.patch', function() {
       routerStub.patch
         .withArgs('/:id', 'accidentCtrl.patch')
@@ -74,7 +74,7 @@ describe('Accident API Router:', function() {
     });
   });
 
-  describe('DELETE /api/accidents/:id', function() {
+  describe('DELETE /api/accident/:id', function() {
     it('should route to accident.controller.destroy', function() {
       routerStub.delete
         .withArgs('/:id', 'accidentCtrl.destroy')

@@ -15,7 +15,7 @@ var genUser = function() {
 
 describe('User Model', function() {
   before(function() {
-    // Clear users before testing
+    // Clear user before testing
     return User.remove();
   });
 
@@ -27,7 +27,7 @@ describe('User Model', function() {
     return User.remove();
   });
 
-  it('should begin with no users', function() {
+  it('should begin with no user', function() {
     return User.find({}).exec().should
       .eventually.have.length(0);
   });

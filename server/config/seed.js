@@ -36,7 +36,7 @@
             provider: 'local'
         })
     .then(() => {
-      console.log('finished populating users');
+      console.log('finished populating user');
     });
   });
 */

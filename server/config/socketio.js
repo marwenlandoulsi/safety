@@ -16,9 +16,8 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
-  require('../api/review/review.socket').register(socket);
   require('../api/accident/accident.socket').register(socket);
-  require('../api/thing/thing.socket').register(socket);
+
 }
 
 export default function(socketio) {
@@ -27,7 +26,7 @@ export default function(socketio) {
   //
   // ex: DEBUG: "http*,socket.io:socket"
 
-  // We can authenticate socket.io users and access their token through socket.decoded_token
+  // We can authenticate socket.io user and access their token through socket.decoded_token
   //
   // 1. You will need to send the token in `client/components/socket/socket.service.js`
   //

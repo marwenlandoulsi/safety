@@ -19,7 +19,7 @@ function handleError(res, statusCode) {
 }
 
 /**
- * Get list of users
+ * Get list of user
  * restriction: 'admin'
  */
 export function index(req, res) {
@@ -84,7 +84,7 @@ export function destroy(req, res) {
 }
 
 /**
- * Change a users password
+ * Change a user password
  */
 export function changePassword(req, res) {
   var userId = req.user._id;

@@ -1,28 +1,55 @@
 <header class="hero-unit" id="banner">
   <div class="container">
-    <h1>'Allo, 'Allo!</h1>
+    <!--<h1>'Allo, 'Allo!</h1>
     <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+    <img src="assets/images/yeoman.png" alt="I'm Yeoman">-->
+
+  <!--    <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ $ctrl.accidents[0].coords[0] }},{{ $ctrl.accidents[0].coords[1] }}&amp;zoom=17&amp;SATELLITE&amp;size=400x350&amp;sensor=false&amp;markers={{ $ctrl.accidents[0].coords[0] }},{{ $ctrl.accidents[0].coords[1] }}&amp;scale=2" class="img-responsive img-rounded">
+-->
   </div>
 </header>
 
 <div class="container">
+
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
-        <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="$ctrl.deleteThing(thing)">&times;</button></a></li>
+      <br/>
+      <label for="filter">Filter results</label>
+      <input id="filter" type="text", name="filter", ng-model="textFilter">
+<br/>
+      <h1 class="page-header">Accidents:</h1>
+      <ul  class="nav nav-tabs nav-stacked " ng-repeat="accident in $ctrl.accidents | filter : textFilter">
+        <li>
+          <a href="/#/accident/{{ accident._id }}">
+            <h4>{{accident.name}} </h4>
+            <p style="color: black">
+              {{accident.address}} : {{accident.createdOn | date: 'M/d/yy h:mm a'}}
+            </p>
+          </a>
+        </li>
       </ul>
+
+
     </div>
+
+
+    <!-- <div class="col-xs-12 col-sm-8">
+      <br/>
+      <label for="filter">Filter results</label>
+      <input id="filter" type="text", name="filter", ng-model="textFilter">
+
+      <br><br>
+      <div class="row list-group">
+        <div class="nav nav-tabs nav-stacked col-xs-12 list-group-item" ng-repeat="accident in $ctrl.accidents | filter : textFilter">
+          <h4>
+            <a href="/#/accident/{{ accident._id }}">{{ accident.name }}</a>
+
+          </h4>
+          <p class="address">{{ accident.address }}</p>
+        </div>
+      </div>
+    </div> -->
   </div>
-
-  <form class="thing-form">
-
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="$ctrl.newThing">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="$ctrl.addThing()">Add New</button>
-      </span>
-    </p>
-  </form>
 </div>
+
+

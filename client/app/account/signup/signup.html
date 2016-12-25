@@ -6,14 +6,25 @@
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="vm.register(form)" novalidate>
 
-        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted,
-                                            'has-error': form.name.$invalid && vm.submitted }">
-          <label>Name</label>
+        <div class="form-group" ng-class="{ 'has-success': form.firstName.$valid && vm.submitted,
+                                            'has-error': form.firstName.$invalid && vm.submitted }">
+          <label>First Name</label>
 
-          <input type="text" name="name" class="form-control" ng-model="vm.user.name"
+          <input type="text" name="firstName" class="form-control" ng-model="vm.user.firstName"
                  required/>
-          <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
-            A name is required
+          <p class="help-block" ng-show="form.firstName.$error.required && vm.submitted">
+            A first name is required
+          </p>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-success': form.lastName.$valid && vm.submitted,
+                                            'has-error': form.lastName.$invalid && vm.submitted }">
+          <label>Last Name</label>
+
+          <input type="text" name="lastName" class="form-control" ng-model="vm.user.lastName"
+                 required/>
+          <p class="help-block" ng-show="form.firstName.$error.required && vm.submitted">
+            A last name is required
           </p>
         </div>
 
@@ -73,14 +84,16 @@
           </a>
         </div>
 
+
+        <!--
         <hr/>
         <div class="row">
           <div class="col-sm-4 col-md-3">
             <oauth-buttons classes="btn-block"></oauth-buttons>
           </div>
-        </div>
+        </div> -->
       </form>
     </div>
   </div>
-  <hr>
+  <!--<hr> -->
 </div>
