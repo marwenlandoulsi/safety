@@ -552,14 +552,20 @@ module.exports.createPDF= function(req, res) {
 
                  var objMedia = [
                  accident.reviews[i].author,
+
                  { text:"link", link:accident.reviews[i].medias[j].path, decoration:"underline"}
+
+
                  ];
 
                  tabpic.push(objMedia);
                }else{
                  var objMedia = [
                  accident.reviews[i].author,
+
                    { text:"link", link:accident.reviews[i].medias[j].path, decoration:"underline"}
+
+
                  ];
                  tabvid.push(objMedia);
                }
@@ -609,6 +615,7 @@ module.exports.createPDF= function(req, res) {
            height: 150,
            };
            }
+
            var picDet= {
              text: '\nPicture details:',
              style: 'header'
@@ -639,7 +646,6 @@ module.exports.createPDF= function(req, res) {
              vidDet = {};
              tabVidDet = {};
            }
-
 
            var dd = {
            content: [
@@ -694,11 +700,13 @@ module.exports.createPDF= function(req, res) {
            'Blood type: '+user.blood,
            ]
            },
+
             picDet,
            pic,
            tabPicDet,
            vidDet,
            tabVidDet,
+
            ],
            styles: {
              header: {
