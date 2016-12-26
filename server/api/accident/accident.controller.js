@@ -71,6 +71,7 @@ function removeEntity(res) {
 }
 
 function handleEntityNotFound(res) {
+  console.log("ok");
   return function(entity) {
     if(!entity) {
       res.status(404).end();
@@ -109,17 +110,15 @@ export function create(req, res) {
   var newAccident = new Accident(req.body);
   newAccident.createdBy = req.user.id;
   /*if(req.user.role == 'admin' || req.user.role == 'police' || req.body.odb == 1){
-    newAccident.active = true;
-  }else{
-    newAccident.active = false;
-  }*/
-
+   newAccident.active = true;
+   }else{
+   newAccident.active = false;
+   }*/
+  newAccident.active = true;
   if (!newAccident.name){
-    newAccident.name = 'accident created automatically';
+    newAccident.name = 'Make attention ! There is an accident in '+newAccident.address;
   }
- /* if(!req.body.name) {
-    newAccident.name = 'accident created automatically';
-  }*/
+
   var medias = [];
   var newReviews = {};
   if(!req.body.saverity && !req.body.reviewText) {
@@ -127,7 +126,7 @@ export function create(req, res) {
   }else{
     newReviews ={
       saverity: req.body.saverity,
-      author: req.user.firstName+" "+req.user.lastName,
+      author: req.user.id,
       reviewText: req.body.reviewText,
       medias: medias
     }
@@ -171,30 +170,11 @@ export function create(req, res) {
   if (!isEmpty(newReviews)){
     newAccident.reviews.push(newReviews);
   }
-  if (newAccident.active==true){
-    var message = {
-      to: '<insert-device-token>',
-      data: {
-        name: 'test',
-        lastname: 'test1',
-      },
-      notification: {
-        title: 'Title of the notification',
-        body: 'Body of the notification'
-      }
-    };
-    fcm.send(message, function(err,response){
-      if(err) {
-        console.log("Something has gone wrong !");
-      } else {
-        console.log("Successfully sent with resposne :",response);
-      }
-    });
-  }
   return Accident.create(newAccident)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
+
 
 // Upserts the given Accident in the DB at the specified ID
 export function upsert(req, res) {
