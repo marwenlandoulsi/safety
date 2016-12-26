@@ -322,46 +322,49 @@ module.exports.createPDF= function(req, res) {
                }
              }
            }
-
+            var pathUploded='./dist/client';
            var pic = { };
            if (pictures.length>=3){
+
                pic = {
                alignment: 'justify',
                columns: [
                  {
-                   image: pathPicture+pictures[0].path,
+                   image: pathUploded+pictures[0].path,
                    fit: [150, 150],
                  },
                  {
 
-                   image: pathPicture+pictures[Math.floor((pictures.length - 1) / 2)].path,
+                   image:pathUploded+pictures[Math.floor((pictures.length - 1) / 2)].path,
                    fit: [150, 150]
                  },
                  {
-                   image: pathPicture+pictures[pictures.length-1].path,
+                   image: pathUploded+pictures[pictures.length-1].path,
                    fit: [150, 150],
                    pageBreak: 'after'
                  }
                ]
            };
            }else if (pictures.length==2){
+
            pic = {
            alignment: 'justify',
            columns: [
            {
-           image: pathPicture+pictures[0].path,
+           image: pathUploded+pictures[0].path,
            fit: [200, 200],
            },
            {
-           image: pathPicture+pictures[1].path,
+           image: pathUploded+pictures[1].path,
            fit: [200, 200],
            pageBreak: 'after'
            }
            ]
            };
            }else if(pictures.length==1){
+
            pic = {
-           image: pathPicture+pictures[0].path,
+           image: pathUploded+pictures[0].path,
            width: 150,
            height: 150,
            };
@@ -479,7 +482,7 @@ module.exports.createPDF= function(req, res) {
            }
            }
            var pdfDoc = printer.createPdfKitDocument(dd);
-           pdfDoc.pipe(fs.createWriteStream('./client/assets/report/'+accident.id+'.pdf')).on('finish',function(){
+           pdfDoc.pipe(fs.createWriteStream('./dist/client/assets/report/'+accident.id+'.pdf')).on('finish',function(){
            sendJSONresponse(res, 200, {
              path: '/assets/report/'+accident.id+'.pdf'
            });

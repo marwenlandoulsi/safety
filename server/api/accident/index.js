@@ -10,7 +10,7 @@ import multer from 'multer';
 import mime from 'mime';
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './client/assets/uploads/')
+    cb(null, './dist/client/assets/uploads/')
   },
   filename: function (req, file, cb) {
     crypto.pseudoRandomBytes(16, function (err, raw) {
