@@ -7,14 +7,20 @@
 	        <strong>{{user.firstName}}  {{user.lastName}}</strong>  <span class="text-muted"> : {{user.role}}</span><br>
 	        <span class="text-muted">{{user.email}}</span>
 	    </div>
-      <select>
-        <option>Admin</option>
-        <option>Police</option>
-        <option>Rescuer</option>
-        <option>User</option>
-      </select>
 
-      <a  ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+      <a title="change the role to user"  ng-click="admin.changeRole(user, 'user')" class="first">
+        <span class="fa fa-user fa-2x" aria-hidden="true"></span>
+      </a>&nbsp;&nbsp;
+      <a title="change the role to admin"  ng-click="admin.changeRole(user, 'admin')" class="second">
+        <span   class="fa fa-user-circle fa-2x" aria-hidden="true" aria-hidden="true"></span>
+      </a>&nbsp;&nbsp;
+      <a title="change the role to police"  ng-click="admin.changeRole(user, 'police')" class="first">
+        <span  class="fa fa-user-secret fa-2x" aria-hidden="true"></span>
+      </a>&nbsp;&nbsp;
+      <a title="change the role to rescuer"  ng-click="admin.changeRole(user, 'rescuer')" class="second">
+        <span  class="fa fa-user-md fa-2x" aria-hidden="true"></span>
+      </a>&nbsp;&nbsp;
+      <a title="delete user"  ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
     </li>
   </ul>
 </div>

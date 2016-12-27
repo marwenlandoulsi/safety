@@ -34,7 +34,6 @@ var fonts = {
 };
 var printer = new PdfPrinter(fonts);
 
-var pathPicture = 'D:/SafetyWay/client';
 //var gm = require('google-static-map').set('AIzaSyDDc9smPTJ3qyEGYBiaWXjMPW1iSbfE8xk');
 function respondWithResult(res, statusCode) {
 
@@ -353,6 +352,10 @@ module.exports.createPDF= function(req, res) {
              text: '\nPicture details:',
              style: 'header'
            };
+            var morePic= {
+              text: '\nMore Pictures :',
+              style: 'header'
+            };
            var tabPicDet ={
              style: 'tableExample',
              table: {
@@ -360,8 +363,8 @@ module.exports.createPDF= function(req, res) {
              }
            };
            if (pictures.length==0){
+             morePic={};
              picDet={
-
              };
              tabPicDet ={};
            }
@@ -431,11 +434,14 @@ module.exports.createPDF= function(req, res) {
            {
            ul: [
            'Age: '+user.age+'\n',
+             'Gender: '+user.gender+'\n',
            'Blood type: '+user.blood,
+
            ]
            },
             picDet,
            pic,
+             morePic,
            tabPicDet,
            vidDet,
            tabVidDet,
