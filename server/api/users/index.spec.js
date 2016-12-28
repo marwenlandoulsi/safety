@@ -43,48 +43,48 @@ describe('User API Router:', function() {
     userIndex.should.equal(routerStub);
   });
 
-  describe('GET /api/user', function() {
-    it('should verify admin role and route to user.controller.index', function() {
+  describe('GET /api/users', function() {
+    it('should verify admin role and route to users.controller.index', function() {
       routerStub.get
         .withArgs('/', 'authService.hasRole.admin', 'userCtrl.index')
         .should.have.been.calledOnce;
     });
   });
 
-  describe('DELETE /api/user/:id', function() {
-    it('should verify admin role and route to user.controller.destroy', function() {
+  describe('DELETE /api/users/:id', function() {
+    it('should verify admin role and route to users.controller.destroy', function() {
       routerStub.delete
         .withArgs('/:id', 'authService.hasRole.admin', 'userCtrl.destroy')
         .should.have.been.calledOnce;
     });
   });
 
-  describe('GET /api/user/me', function() {
-    it('should be authenticated and route to user.controller.me', function() {
+  describe('GET /api/users/me', function() {
+    it('should be authenticated and route to users.controller.me', function() {
       routerStub.get
         .withArgs('/me', 'authService.isAuthenticated', 'userCtrl.me')
         .should.have.been.calledOnce;
     });
   });
 
-  describe('PUT /api/user/:id/password', function() {
-    it('should be authenticated and route to user.controller.changePassword', function() {
+  describe('PUT /api/users/:id/password', function() {
+    it('should be authenticated and route to users.controller.changePassword', function() {
       routerStub.put
         .withArgs('/:id/password', 'authService.isAuthenticated', 'userCtrl.changePassword')
         .should.have.been.calledOnce;
     });
   });
 
-  describe('GET /api/user/:id', function() {
-    it('should be authenticated and route to user.controller.show', function() {
+  describe('GET /api/users/:id', function() {
+    it('should be authenticated and route to users.controller.show', function() {
       routerStub.get
         .withArgs('/:id', 'authService.isAuthenticated', 'userCtrl.show')
         .should.have.been.calledOnce;
     });
   });
 
-  describe('POST /api/user', function() {
-    it('should route to user.controller.create', function() {
+  describe('POST /api/users', function() {
+    it('should route to users.controller.create', function() {
       routerStub.post
         .withArgs('/', 'userCtrl.create')
         .should.have.been.calledOnce;

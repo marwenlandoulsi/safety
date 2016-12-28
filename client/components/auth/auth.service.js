@@ -17,7 +17,7 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
   var userRoles = appConfig.userRoles || [];
   /**
    * Check if userRole is >= role
-   * @param {String} userRole - role of current user
+   * @param {String} userRole - role of current users
    * @param {String} role - role to check against
    */
   var hasRole = function(userRole, role) {
@@ -30,10 +30,10 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
 
   var Auth = {
     /**
-     * Authenticate user and save token
+     * Authenticate users and save token
      *
-     * @param  {Object}   user     - login info
-     * @param  {Function} callback - function(error, user)
+     * @param  {Object}   users     - login info
+     * @param  {Function} callback - function(error, users)
      * @return {Promise}
      */
     login({
@@ -61,7 +61,7 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
     },
 
     /**
-     * Delete access token and user info
+     * Delete access token and users info
      */
     logout() {
       $cookies.remove('token');
@@ -69,10 +69,10 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
     },
 
     /**
-     * Create a new user
+     * Create a new users
      *
-     * @param  {Object}   user     - user info
-     * @param  {Function} callback - function(error, user)
+     * @param  {Object}   user     - users info
+     * @param  {Function} callback - function(error, users)
      * @return {Promise}
      */
     createUser(user, callback ? : Function) {
@@ -92,7 +92,7 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
      *
      * @param  {String}   oldPassword
      * @param  {String}   newPassword
-     * @param  {Function} callback    - function(error, user)
+     * @param  {Function} callback    - function(error, users)
      * @return {Promise}
      */
     changePassword(oldPassword, newPassword, callback ? : Function) {
@@ -110,9 +110,9 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
     },
 
     /**
-     * Gets all available info on a user
+     * Gets all available info on a users
      *
-     * @param  {Function} [callback] - function(user)
+     * @param  {Function} [callback] - function(users)
      * @return {Promise}
      */
     getCurrentUser(callback ? : Function) {
@@ -129,7 +129,7 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
     },
 
     /**
-     * Gets all available info on a user
+     * Gets all available info on a users
      *
      * @return {Object}
      */
@@ -138,7 +138,7 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
     },
 
     /**
-     * Check if a user is logged in
+     * Check if a users is logged in
      *
      * @param  {Function} [callback] - function(is)
      * @return {Promise}
@@ -154,7 +154,7 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
     },
 
     /**
-     * Check if a user is logged in
+     * Check if a users is logged in
      *
      * @return {Bool}
      */
@@ -163,7 +163,7 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
     },
 
     /**
-     * Check if a user has a specified role or higher
+     * Check if a users has a specified role or higher
      *
      * @param  {String}     role     - the role to check against
      * @param  {Function} [callback] - function(has)
@@ -180,7 +180,7 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
     },
 
     /**
-     * Check if a user has a specified role or higher
+     * Check if a users has a specified role or higher
      *
      * @param  {String} role - the role to check against
      * @return {Bool}
@@ -190,7 +190,7 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
     },
 
     /**
-     * Check if a user is an admin
+     * Check if a users is an admin
      *   (synchronous|asynchronous)
      *
      * @param  {Function|*} callback - optional, function(is)
@@ -201,7 +201,7 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
     },
 
     /**
-     * Check if a user is an admin
+     * Check if a users is an admin
      *
      * @return {Bool}
      */

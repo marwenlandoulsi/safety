@@ -19,7 +19,7 @@ export class MainController {
   }
 
   $onInit() {
-    this.$http.get('/api/accident/active')
+    this.$http.get('/api/accidents/active')
       .then(response => {
         this.accidents = response.data;
         this.socket.syncUpdates('accident', this.accidents);
@@ -29,7 +29,7 @@ export class MainController {
 
   addAccident() {
     if(this.newAccident) {
-      this.$http.post('/api/accident/', {
+      this.$http.post('/api/accidents/', {
         name: this.newAccident
       });
       this.newAccident = '';
@@ -37,7 +37,7 @@ export class MainController {
   }
 
   deleteAccident(accident) {
-    this.$http.delete(`/api/accident/${accident._id}`);
+    this.$http.delete(`/api/accidents/${accident._id}`);
   }
 }
 

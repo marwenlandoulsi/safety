@@ -159,7 +159,7 @@ module.exports.readOne = function(req, res) {
         var response, review;
         if (!accident) {
           sendJSONresponse(res, 404, {
-            "message": "accident id not found"
+            "message": "accidents id not found"
           });
           return;
         } else if (err) {
@@ -193,7 +193,7 @@ module.exports.updateOne= function(req, res) {
         var thisReview;
         if (!accident) {
           sendJSONresponse(res, 404, {
-            "message": "accident id not found"
+            "message": "accidents id not found"
           });
           return;
         } else if (err) {
@@ -256,7 +256,7 @@ module.exports.deleteOne = function(req, res) {
       function(err, accident) {
         if (!accident) {
           sendJSONresponse(res, 404, {
-            "message": "accident id not found"
+            "message": "accidents id not found"
           });
           return;
         } else if (err) {

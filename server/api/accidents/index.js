@@ -19,15 +19,15 @@ var storage = multer.diskStorage({
   }
 });
 var uploader = multer({ storage: storage});
-//get all accident
+//get all accidents
 router.get('/', auth.hasRole('police'), controller.index);
-//get all active accident
+//get all active accidents
 router.get('/active', controller.getActive);
-//get specific accident
+//get specific accidents
 router.get('/:id', controller.show);
-//add an accident
+//add an accidents
 router.post('/', auth.isAuthenticated(), uploader.array('upload', 10), controller.create);
-//update accident
+//update accidents
 router.put('/:id', auth.hasRole('police'), controller.upsert);
 router.patch('/:id', auth.isAuthenticated(), controller.patch);
 router.delete('/:id', auth.hasRole('police'), controller.destroy);

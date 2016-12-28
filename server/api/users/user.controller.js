@@ -19,7 +19,7 @@ function handleError(res, statusCode) {
 }
 
 /**
- * Get list of user
+ * Get list of users
  * restriction: 'admin'
  */
 export function index(req, res) {
@@ -31,7 +31,7 @@ export function index(req, res) {
 }
 
 /**
- * Creates a new user
+ * Creates a new users
  */
 export function create(req, res) {
   var newUser = new User(req.body);
@@ -48,7 +48,7 @@ export function create(req, res) {
 }
 
 /**
- * Get a single user
+ * Get a single users
  */
 export function show(req, res, next) {
   var userId = req.params.id;
@@ -66,13 +66,13 @@ export function show(req, res, next) {
         role: user.role
       }
       res.json(showUser);
-      //res.json(user.profile);
+      //res.json(users.profile);
     })
     .catch(err => next(err));
 }
 
 /**
- * Deletes a user
+ * Deletes a users
  * restriction: 'admin'
  */
 export function destroy(req, res) {
@@ -84,7 +84,7 @@ export function destroy(req, res) {
 }
 
 /**
- * Change a user password
+ * Change a users password
  */
 export function changePassword(req, res) {
   var userId = req.user._id;
@@ -128,7 +128,7 @@ export function me(req, res, next) {
 export function authCallback(req, res) {
   res.redirect('/');
 }
-// change role user
+// change role users
 export function ChangeRole(req, res) {
   var userId = req.params.id;
   var newRole = String(req.body.newRole);

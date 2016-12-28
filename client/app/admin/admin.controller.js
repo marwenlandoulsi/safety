@@ -5,7 +5,7 @@ export default class AdminController {
   $http;
   /*@ngInject*/
   constructor(User, $http) {
-    // Use the User $resource to fetch all user
+    // Use the User $resource to fetch all users
     this.users = User.query();
     this.$http = $http;
 
@@ -19,7 +19,7 @@ export default class AdminController {
   }
 
   changeRole(user, value) {
-    this.$http.put('/api/user/'+user._id+'/newRole', {
+    this.$http.put('/api/users/'+user._id+'/newRole', {
       newRole: value
     });
     if (value == 'admin'){

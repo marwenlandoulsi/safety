@@ -12,7 +12,7 @@
 
 import jsonpatch from 'fast-json-patch';
 import Accident from './accident.model';
-import User from '../user/user.model';
+import User from '../users/user.model';
 
 var FCM = require('fcm-push');
 var serverkey = 'AAAABSIc1-A:APA91bEOOFscXqyLcHMW_ZoEs5dM6N9aEr-oAc9_Yn3MGl0stT10xb7Aay3I4S4z0mT1XyxTck5llYBvwBlzyW7mzJdqj8wxQoouxm2j65cF-ySnI4NbjAt56OSmNerUAZHr1uIsAwWp';
@@ -108,14 +108,14 @@ export function show(req, res) {
 export function create(req, res) {
   var newAccident = new Accident(req.body);
   newAccident.createdBy = req.user.id;
-  /*if(req.user.role == 'admin' || req.user.role == 'police' || req.body.odb == 1){
+  /*if(req.users.role == 'admin' || req.users.role == 'police' || req.body.odb == 1){
    newAccident.active = true;
    }else{
    newAccident.active = false;
    }*/
   newAccident.active = true;
   if (!newAccident.name){
-    newAccident.name = 'Make attention ! There is an accident in '+newAccident.address;
+    newAccident.name = 'Make attention ! There is an accidents in '+newAccident.address;
   }
 
   var medias = [];
@@ -223,7 +223,7 @@ module.exports.createPDF= function(req, res) {
       function(err, accident) {
         if (!accident) {
           sendJSONresponse(res, 404, {
-            "message": "accident id not found"
+            "message": "accidents id not found"
           });
           return;
         }else if (err) {
@@ -492,7 +492,7 @@ var getUser = function(id, callback) {
       .findById(id)
       .exec(function(err, user) {
         if (!user) {
-          console.log("user not found");
+          console.log("users not found");
           return;
         } else if (err) {
           console.log(err);

@@ -3,14 +3,14 @@ import config from '../config/environment';
 import jwt from 'jsonwebtoken';
 import expressJwt from 'express-jwt';
 import compose from 'composable-middleware';
-import User from '../api/user/user.model';
+import User from '../api/users/user.model';
 
 var validateJwt = expressJwt({
   secret: config.secrets.session
 });
 
 /**
- * Attaches the user object to the request if authenticated
+ * Attaches the users object to the request if authenticated
  * Otherwise returns 403
  */
 export function isAuthenticated() {
@@ -27,7 +27,7 @@ export function isAuthenticated() {
       }
       validateJwt(req, res, next);
     })
-    // Attach user to request
+    // Attach users to request
     .use(function(req, res, next) {
       User.findById(req.user._id).exec()
         .then(user => {
@@ -42,7 +42,7 @@ export function isAuthenticated() {
 }
 
 /**
- * Checks if the user role meets the minimum requirements of the route
+ * Checks if the users role meets the minimum requirements of the route
  */
 export function hasRole(roleRequired) {
   if(!roleRequired) {

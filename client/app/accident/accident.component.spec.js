@@ -19,7 +19,7 @@ describe('Component: AccidentComponent', function() {
   beforeEach(inject(function(_$httpBackend_, $http, $stateParams, $componentController, $rootScope, $state,
                              socket) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/api/accident/'+$stateParams.accidentId)
+    $httpBackend.expectGET('/api/accidents/'+$stateParams.accidentId)
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
 
     scope = $rootScope.$new();

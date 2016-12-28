@@ -15,7 +15,7 @@ var genUser = function() {
 
 describe('User Model', function() {
   before(function() {
-    // Clear user before testing
+    // Clear users before testing
     return User.remove();
   });
 
@@ -27,12 +27,12 @@ describe('User Model', function() {
     return User.remove();
   });
 
-  it('should begin with no user', function() {
+  it('should begin with no users', function() {
     return User.find({}).exec().should
       .eventually.have.length(0);
   });
 
-  it('should fail when saving a duplicate user', function() {
+  it('should fail when saving a duplicate users', function() {
     return user.save()
       .then(function() {
         var userDup = genUser();
@@ -56,7 +56,7 @@ describe('User Model', function() {
       return user.save().should.be.rejected;
     });
 
-    describe('given user provider is google', function() {
+    describe('given users provider is google', function() {
       beforeEach(function() {
         user.provider = 'google';
       });
@@ -67,7 +67,7 @@ describe('User Model', function() {
       });
     });
 
-    describe('given user provider is facebook', function() {
+    describe('given users provider is facebook', function() {
       beforeEach(function() {
         user.provider = 'facebook';
       });
@@ -78,7 +78,7 @@ describe('User Model', function() {
       });
     });
 
-    describe('given user provider is twitter', function() {
+    describe('given users provider is twitter', function() {
       beforeEach(function() {
         user.provider = 'twitter';
       });
@@ -89,7 +89,7 @@ describe('User Model', function() {
       });
     });
 
-    describe('given user provider is github', function() {
+    describe('given users provider is github', function() {
       beforeEach(function() {
         user.provider = 'github';
       });
@@ -117,16 +117,16 @@ describe('User Model', function() {
       return user.save().should.be.rejected;
     });
 
-    describe('given the user has been previously saved', function() {
+    describe('given the users has been previously saved', function() {
       beforeEach(function() {
         return user.save();
       });
 
-      it('should authenticate user if valid', function() {
+      it('should authenticate users if valid', function() {
         user.authenticate('password').should.be.true;
       });
 
-      it('should not authenticate user if invalid', function() {
+      it('should not authenticate users if invalid', function() {
         user.authenticate('blah').should.not.be.true;
       });
 
@@ -139,7 +139,7 @@ describe('User Model', function() {
       });
     });
 
-    describe('given user provider is google', function() {
+    describe('given users provider is google', function() {
       beforeEach(function() {
         user.provider = 'google';
       });
@@ -150,7 +150,7 @@ describe('User Model', function() {
       });
     });
 
-    describe('given user provider is facebook', function() {
+    describe('given users provider is facebook', function() {
       beforeEach(function() {
         user.provider = 'facebook';
       });
@@ -161,7 +161,7 @@ describe('User Model', function() {
       });
     });
 
-    describe('given user provider is twitter', function() {
+    describe('given users provider is twitter', function() {
       beforeEach(function() {
         user.provider = 'twitter';
       });
@@ -172,7 +172,7 @@ describe('User Model', function() {
       });
     });
 
-    describe('given user provider is github', function() {
+    describe('given users provider is github', function() {
       beforeEach(function() {
         user.provider = 'github';
       });

@@ -7,7 +7,7 @@ import request from 'supertest';
 describe('User API:', function() {
   var user;
 
-  // Clear user before testing
+  // Clear users before testing
   before(function() {
     return User.remove().then(function() {
       user = new User({
@@ -20,12 +20,12 @@ describe('User API:', function() {
     });
   });
 
-  // Clear user after testing
+  // Clear users after testing
   after(function() {
     return User.remove();
   });
 
-  describe('GET /api/user/me', function() {
+  describe('GET /api/users/me', function() {
     var token;
 
     before(function(done) {
@@ -43,9 +43,9 @@ describe('User API:', function() {
         });
     });
 
-    it('should respond with a user profile when authenticated', function(done) {
+    it('should respond with a users profile when authenticated', function(done) {
       request(app)
-        .get('/api/user/me')
+        .get('/api/users/me')
         .set('authorization', `Bearer ${token}`)
         .expect(200)
         .expect('Content-Type', /json/)
@@ -57,7 +57,7 @@ describe('User API:', function() {
 
     it('should respond with a 401 when not authenticated', function(done) {
       request(app)
-        .get('/api/user/me')
+        .get('/api/users/me')
         .expect(401)
         .end(done);
     });

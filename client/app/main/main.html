@@ -40,12 +40,12 @@
 
       <br><br>
       <div class="row list-group">
-        <div class="nav nav-tabs nav-stacked col-xs-12 list-group-item" ng-repeat="accident in $ctrl.accidents | filter : textFilter">
+        <div class="nav nav-tabs nav-stacked col-xs-12 list-group-item" ng-repeat="accidents in $ctrl.accidents | filter : textFilter">
           <h4>
-            <a href="/#/accident/{{ accident._id }}">{{ accident.name }}</a>
+            <a href="/#/accidents/{{ accidents._id }}">{{ accidents.name }}</a>
 
           </h4>
-          <p class="address">{{ accident.address }}</p>
+          <p class="address">{{ accidents.address }}</p>
         </div>
       </div>
     </div> -->

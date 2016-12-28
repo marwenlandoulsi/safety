@@ -33,13 +33,13 @@ export class AccidentController {
   }
 
   $onInit() {
-    this.$http.get('/api/accident/'+this.idAccident)
+    this.$http.get('/api/accidents/'+this.idAccident)
       .then(response => {
         this.accident = response.data;
         this.socket.syncUpdates('accident', this.accident);
       });
 
-    this.$http.get('/api/accident/'+this.idAccident)
+    this.$http.get('/api/accidents/'+this.idAccident)
       .then(
         response => {
         this.accident = response.data;
@@ -51,7 +51,7 @@ export class AccidentController {
 
   addAccident() {
     if(this.newAccident) {
-      this.$http.post('/api/accident/', {
+      this.$http.post('/api/accidents/', {
         name: this.newAccident
       });
       this.newAccident = '';
@@ -63,7 +63,7 @@ export class AccidentController {
   }
 
   getPDF(){
-    this.$http.get('/api/accident/'+this.idAccident+'/pdf')
+    this.$http.get('/api/accidents/'+this.idAccident+'/pdf')
       .then(
         response => {
           this.pathPdf = response.data.path;

@@ -34,48 +34,48 @@ describe('Accident API Router:', function() {
     accidentIndex.should.equal(routerStub);
   });
 
-  describe('GET /api/accident', function() {
-    it('should route to accident.controller.index', function() {
+  describe('GET /api/accidents', function() {
+    it('should route to accidents.controller.index', function() {
       routerStub.get
         .withArgs('/', 'accidentCtrl.index')
         .should.have.been.calledOnce;
     });
   });
 
-  describe('GET /api/accident/:id', function() {
-    it('should route to accident.controller.show', function() {
+  describe('GET /api/accidents/:id', function() {
+    it('should route to accidents.controller.show', function() {
       routerStub.get
         .withArgs('/:id', 'accidentCtrl.show')
         .should.have.been.calledOnce;
     });
   });
 
-  describe('POST /api/accident', function() {
-    it('should route to accident.controller.create', function() {
+  describe('POST /api/accidents', function() {
+    it('should route to accidents.controller.create', function() {
       routerStub.post
         .withArgs('/', 'accidentCtrl.create')
         .should.have.been.calledOnce;
     });
   });
 
-  describe('PUT /api/accident/:id', function() {
-    it('should route to accident.controller.upsert', function() {
+  describe('PUT /api/accidents/:id', function() {
+    it('should route to accidents.controller.upsert', function() {
       routerStub.put
         .withArgs('/:id', 'accidentCtrl.upsert')
         .should.have.been.calledOnce;
     });
   });
 
-  describe('PATCH /api/accident/:id', function() {
-    it('should route to accident.controller.patch', function() {
+  describe('PATCH /api/accidents/:id', function() {
+    it('should route to accidents.controller.patch', function() {
       routerStub.patch
         .withArgs('/:id', 'accidentCtrl.patch')
         .should.have.been.calledOnce;
     });
   });
 
-  describe('DELETE /api/accident/:id', function() {
-    it('should route to accident.controller.destroy', function() {
+  describe('DELETE /api/accidents/:id', function() {
+    it('should route to accidents.controller.destroy', function() {
       routerStub.delete
         .withArgs('/:id', 'accidentCtrl.destroy')
         .should.have.been.calledOnce;

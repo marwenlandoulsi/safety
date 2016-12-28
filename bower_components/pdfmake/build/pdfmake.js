@@ -9796,16 +9796,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'barney',  'active': true },
-	     *   { 'user': 'fred',    'active': false },
-	     *   { 'user': 'pebbles', 'active': false }
+	     *   { 'users': 'barney',  'active': true },
+	     *   { 'users': 'fred',    'active': false },
+	     *   { 'users': 'pebbles', 'active': false }
 	     * ];
 	     *
 	     * _.dropRightWhile(users, function(o) { return !o.active; });
 	     * // => objects for ['barney']
 	     *
 	     * // The `_.matches` iteratee shorthand.
-	     * _.dropRightWhile(users, { 'user': 'pebbles', 'active': false });
+	     * _.dropRightWhile(users, { 'users': 'pebbles', 'active': false });
 	     * // => objects for ['barney', 'fred']
 	     *
 	     * // The `_.matchesProperty` iteratee shorthand.
@@ -9837,16 +9837,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'barney',  'active': false },
-	     *   { 'user': 'fred',    'active': false },
-	     *   { 'user': 'pebbles', 'active': true }
+	     *   { 'users': 'barney',  'active': false },
+	     *   { 'users': 'fred',    'active': false },
+	     *   { 'users': 'pebbles', 'active': true }
 	     * ];
 	     *
 	     * _.dropWhile(users, function(o) { return !o.active; });
 	     * // => objects for ['pebbles']
 	     *
 	     * // The `_.matches` iteratee shorthand.
-	     * _.dropWhile(users, { 'user': 'barney', 'active': false });
+	     * _.dropWhile(users, { 'users': 'barney', 'active': false });
 	     * // => objects for ['fred', 'pebbles']
 	     *
 	     * // The `_.matchesProperty` iteratee shorthand.
@@ -9919,16 +9919,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'barney',  'active': false },
-	     *   { 'user': 'fred',    'active': false },
-	     *   { 'user': 'pebbles', 'active': true }
+	     *   { 'users': 'barney',  'active': false },
+	     *   { 'users': 'fred',    'active': false },
+	     *   { 'users': 'pebbles', 'active': true }
 	     * ];
 	     *
-	     * _.findIndex(users, function(o) { return o.user == 'barney'; });
+	     * _.findIndex(users, function(o) { return o.users == 'barney'; });
 	     * // => 0
 	     *
 	     * // The `_.matches` iteratee shorthand.
-	     * _.findIndex(users, { 'user': 'fred', 'active': false });
+	     * _.findIndex(users, { 'users': 'fred', 'active': false });
 	     * // => 1
 	     *
 	     * // The `_.matchesProperty` iteratee shorthand.
@@ -9966,16 +9966,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'barney',  'active': true },
-	     *   { 'user': 'fred',    'active': false },
-	     *   { 'user': 'pebbles', 'active': false }
+	     *   { 'users': 'barney',  'active': true },
+	     *   { 'users': 'fred',    'active': false },
+	     *   { 'users': 'pebbles', 'active': false }
 	     * ];
 	     *
-	     * _.findLastIndex(users, function(o) { return o.user == 'pebbles'; });
+	     * _.findLastIndex(users, function(o) { return o.users == 'pebbles'; });
 	     * // => 2
 	     *
 	     * // The `_.matches` iteratee shorthand.
-	     * _.findLastIndex(users, { 'user': 'barney', 'active': true });
+	     * _.findLastIndex(users, { 'users': 'barney', 'active': true });
 	     * // => 0
 	     *
 	     * // The `_.matchesProperty` iteratee shorthand.
@@ -10917,16 +10917,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'barney',  'active': true },
-	     *   { 'user': 'fred',    'active': false },
-	     *   { 'user': 'pebbles', 'active': false }
+	     *   { 'users': 'barney',  'active': true },
+	     *   { 'users': 'fred',    'active': false },
+	     *   { 'users': 'pebbles', 'active': false }
 	     * ];
 	     *
 	     * _.takeRightWhile(users, function(o) { return !o.active; });
 	     * // => objects for ['fred', 'pebbles']
 	     *
 	     * // The `_.matches` iteratee shorthand.
-	     * _.takeRightWhile(users, { 'user': 'pebbles', 'active': false });
+	     * _.takeRightWhile(users, { 'users': 'pebbles', 'active': false });
 	     * // => objects for ['pebbles']
 	     *
 	     * // The `_.matchesProperty` iteratee shorthand.
@@ -10958,16 +10958,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'barney',  'active': false },
-	     *   { 'user': 'fred',    'active': false},
-	     *   { 'user': 'pebbles', 'active': true }
+	     *   { 'users': 'barney',  'active': false },
+	     *   { 'users': 'fred',    'active': false},
+	     *   { 'users': 'pebbles', 'active': true }
 	     * ];
 	     *
 	     * _.takeWhile(users, function(o) { return !o.active; });
 	     * // => objects for ['barney', 'fred']
 	     *
 	     * // The `_.matches` iteratee shorthand.
-	     * _.takeWhile(users, { 'user': 'barney', 'active': false });
+	     * _.takeWhile(users, { 'users': 'barney', 'active': false });
 	     * // => objects for ['barney']
 	     *
 	     * // The `_.matchesProperty` iteratee shorthand.
@@ -11412,16 +11412,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'barney',  'age': 36 },
-	     *   { 'user': 'fred',    'age': 40 },
-	     *   { 'user': 'pebbles', 'age': 1 }
+	     *   { 'users': 'barney',  'age': 36 },
+	     *   { 'users': 'fred',    'age': 40 },
+	     *   { 'users': 'pebbles', 'age': 1 }
 	     * ];
 	     *
 	     * var youngest = _
 	     *   .chain(users)
 	     *   .sortBy('age')
 	     *   .map(function(o) {
-	     *     return o.user + ' is ' + o.age;
+	     *     return o.users + ' is ' + o.age;
 	     *   })
 	     *   .head()
 	     *   .value();
@@ -11539,21 +11539,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'barney', 'age': 36 },
-	     *   { 'user': 'fred',   'age': 40 }
+	     *   { 'users': 'barney', 'age': 36 },
+	     *   { 'users': 'fred',   'age': 40 }
 	     * ];
 	     *
 	     * // A sequence without explicit chaining.
 	     * _(users).head();
-	     * // => { 'user': 'barney', 'age': 36 }
+	     * // => { 'users': 'barney', 'age': 36 }
 	     *
 	     * // A sequence with explicit chaining.
 	     * _(users)
 	     *   .chain()
 	     *   .head()
-	     *   .pick('user')
+	     *   .pick('users')
 	     *   .value();
-	     * // => { 'user': 'barney' }
+	     * // => { 'users': 'barney' }
 	     */
 	    function wrapperChain() {
 	      return chain(this);
@@ -11800,12 +11800,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * // => false
 	     *
 	     * var users = [
-	     *   { 'user': 'barney', 'age': 36, 'active': false },
-	     *   { 'user': 'fred',   'age': 40, 'active': false }
+	     *   { 'users': 'barney', 'age': 36, 'active': false },
+	     *   { 'users': 'fred',   'age': 40, 'active': false }
 	     * ];
 	     *
 	     * // The `_.matches` iteratee shorthand.
-	     * _.every(users, { 'user': 'barney', 'active': false });
+	     * _.every(users, { 'users': 'barney', 'active': false });
 	     * // => false
 	     *
 	     * // The `_.matchesProperty` iteratee shorthand.
@@ -11842,8 +11842,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'barney', 'age': 36, 'active': true },
-	     *   { 'user': 'fred',   'age': 40, 'active': false }
+	     *   { 'users': 'barney', 'age': 36, 'active': true },
+	     *   { 'users': 'fred',   'age': 40, 'active': false }
 	     * ];
 	     *
 	     * _.filter(users, function(o) { return !o.active; });
@@ -11882,9 +11882,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'barney',  'age': 36, 'active': true },
-	     *   { 'user': 'fred',    'age': 40, 'active': false },
-	     *   { 'user': 'pebbles', 'age': 1,  'active': true }
+	     *   { 'users': 'barney',  'age': 36, 'active': true },
+	     *   { 'users': 'fred',    'age': 40, 'active': false },
+	     *   { 'users': 'pebbles', 'age': 1,  'active': true }
 	     * ];
 	     *
 	     * _.find(users, function(o) { return o.age < 40; });
@@ -12234,12 +12234,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * // => [16, 64] (iteration order is not guaranteed)
 	     *
 	     * var users = [
-	     *   { 'user': 'barney' },
-	     *   { 'user': 'fred' }
+	     *   { 'users': 'barney' },
+	     *   { 'users': 'fred' }
 	     * ];
 	     *
 	     * // The `_.property` iteratee shorthand.
-	     * _.map(users, 'user');
+	     * _.map(users, 'users');
 	     * // => ['barney', 'fred']
 	     */
 	    function map(collection, iteratee) {
@@ -12266,14 +12266,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'fred',   'age': 48 },
-	     *   { 'user': 'barney', 'age': 34 },
-	     *   { 'user': 'fred',   'age': 40 },
-	     *   { 'user': 'barney', 'age': 36 }
+	     *   { 'users': 'fred',   'age': 48 },
+	     *   { 'users': 'barney', 'age': 34 },
+	     *   { 'users': 'fred',   'age': 40 },
+	     *   { 'users': 'barney', 'age': 36 }
 	     * ];
 	     *
-	     * // Sort by `user` in ascending order and by `age` in descending order.
-	     * _.orderBy(users, ['user', 'age'], ['asc', 'desc']);
+	     * // Sort by `users` in ascending order and by `age` in descending order.
+	     * _.orderBy(users, ['users', 'age'], ['asc', 'desc']);
 	     * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
 	     */
 	    function orderBy(collection, iteratees, orders, guard) {
@@ -12306,9 +12306,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'barney',  'age': 36, 'active': false },
-	     *   { 'user': 'fred',    'age': 40, 'active': true },
-	     *   { 'user': 'pebbles', 'age': 1,  'active': false }
+	     *   { 'users': 'barney',  'age': 36, 'active': false },
+	     *   { 'users': 'fred',    'age': 40, 'active': true },
+	     *   { 'users': 'pebbles', 'age': 1,  'active': false }
 	     * ];
 	     *
 	     * _.partition(users, function(o) { return o.active; });
@@ -12418,8 +12418,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'barney', 'age': 36, 'active': false },
-	     *   { 'user': 'fred',   'age': 40, 'active': true }
+	     *   { 'users': 'barney', 'age': 36, 'active': false },
+	     *   { 'users': 'fred',   'age': 40, 'active': true }
 	     * ];
 	     *
 	     * _.reject(users, function(o) { return !o.active; });
@@ -12566,12 +12566,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * // => true
 	     *
 	     * var users = [
-	     *   { 'user': 'barney', 'active': true },
-	     *   { 'user': 'fred',   'active': false }
+	     *   { 'users': 'barney', 'active': true },
+	     *   { 'users': 'fred',   'active': false }
 	     * ];
 	     *
 	     * // The `_.matches` iteratee shorthand.
-	     * _.some(users, { 'user': 'barney', 'active': false });
+	     * _.some(users, { 'users': 'barney', 'active': false });
 	     * // => false
 	     *
 	     * // The `_.matchesProperty` iteratee shorthand.
@@ -12607,16 +12607,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'fred',   'age': 48 },
-	     *   { 'user': 'barney', 'age': 36 },
-	     *   { 'user': 'fred',   'age': 40 },
-	     *   { 'user': 'barney', 'age': 34 }
+	     *   { 'users': 'fred',   'age': 48 },
+	     *   { 'users': 'barney', 'age': 36 },
+	     *   { 'users': 'fred',   'age': 40 },
+	     *   { 'users': 'barney', 'age': 34 }
 	     * ];
 	     *
-	     * _.sortBy(users, [function(o) { return o.user; }]);
+	     * _.sortBy(users, [function(o) { return o.users; }]);
 	     * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
 	     *
-	     * _.sortBy(users, ['user', 'age']);
+	     * _.sortBy(users, ['users', 'age']);
 	     * // => objects for [['barney', 34], ['barney', 36], ['fred', 40], ['fred', 48]]
 	     */
 	    var sortBy = baseRest(function(collection, iteratees) {
@@ -12770,10 +12770,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * function greet(greeting, punctuation) {
-	     *   return greeting + ' ' + this.user + punctuation;
+	     *   return greeting + ' ' + this.users + punctuation;
 	     * }
 	     *
-	     * var object = { 'user': 'fred' };
+	     * var object = { 'users': 'fred' };
 	     *
 	     * var bound = _.bind(greet, object, 'hi');
 	     * bound('!');
@@ -12816,9 +12816,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var object = {
-	     *   'user': 'fred',
+	     *   'users': 'fred',
 	     *   'greet': function(greeting, punctuation) {
-	     *     return greeting + ' ' + this.user + punctuation;
+	     *     return greeting + ' ' + this.users + punctuation;
 	     *   }
 	     * };
 	     *
@@ -12827,7 +12827,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * // => 'hi fred!'
 	     *
 	     * object.greet = function(greeting, punctuation) {
-	     *   return greeting + 'ya ' + this.user + punctuation;
+	     *   return greeting + 'ya ' + this.users + punctuation;
 	     * };
 	     *
 	     * bound('!');
@@ -16034,8 +16034,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = {
-	     *   'fred':    { 'user': 'fred',    'age': 40 },
-	     *   'pebbles': { 'user': 'pebbles', 'age': 1 }
+	     *   'fred':    { 'users': 'fred',    'age': 40 },
+	     *   'pebbles': { 'users': 'pebbles', 'age': 1 }
 	     * };
 	     *
 	     * _.mapValues(users, function(o) { return o.age; });
@@ -17352,8 +17352,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * // Use the "interpolate" delimiter to create a compiled template.
-	     * var compiled = _.template('hello <%= user %>!');
-	     * compiled({ 'user': 'fred' });
+	     * var compiled = _.template('hello <%= users %>!');
+	     * compiled({ 'users': 'fred' });
 	     * // => 'hello fred!'
 	     *
 	     * // Use the HTML "escape" delimiter to escape data property values.
@@ -17362,19 +17362,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * // => '<b>&lt;script&gt;</b>'
 	     *
 	     * // Use the "evaluate" delimiter to execute JavaScript and generate HTML.
-	     * var compiled = _.template('<% _.forEach(users, function(user) { %><li><%- user %></li><% }); %>');
+	     * var compiled = _.template('<% _.forEach(users, function(users) { %><li><%- users %></li><% }); %>');
 	     * compiled({ 'users': ['fred', 'barney'] });
 	     * // => '<li>fred</li><li>barney</li>'
 	     *
 	     * // Use the internal `print` function in "evaluate" delimiters.
-	     * var compiled = _.template('<% print("hello " + user); %>!');
-	     * compiled({ 'user': 'barney' });
+	     * var compiled = _.template('<% print("hello " + users); %>!');
+	     * compiled({ 'users': 'barney' });
 	     * // => 'hello barney!'
 	     *
 	     * // Use the ES template literal delimiter as an "interpolate" delimiter.
 	     * // Disable support by replacing the "interpolate" delimiter.
-	     * var compiled = _.template('hello ${ user }!');
-	     * compiled({ 'user': 'pebbles' });
+	     * var compiled = _.template('hello ${ users }!');
+	     * compiled({ 'users': 'pebbles' });
 	     * // => 'hello pebbles!'
 	     *
 	     * // Use backslashes to treat delimiters as plain text.
@@ -17383,29 +17383,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * // => '<%- value %>'
 	     *
 	     * // Use the `imports` option to import `jQuery` as `jq`.
-	     * var text = '<% jq.each(users, function(user) { %><li><%- user %></li><% }); %>';
+	     * var text = '<% jq.each(users, function(users) { %><li><%- users %></li><% }); %>';
 	     * var compiled = _.template(text, { 'imports': { 'jq': jQuery } });
 	     * compiled({ 'users': ['fred', 'barney'] });
 	     * // => '<li>fred</li><li>barney</li>'
 	     *
 	     * // Use the `sourceURL` option to specify a custom sourceURL for the template.
-	     * var compiled = _.template('hello <%= user %>!', { 'sourceURL': '/basic/greeting.jst' });
+	     * var compiled = _.template('hello <%= users %>!', { 'sourceURL': '/basic/greeting.jst' });
 	     * compiled(data);
 	     * // => Find the source of "greeting.jst" under the Sources tab or Resources panel of the web inspector.
 	     *
 	     * // Use the `variable` option to ensure a with-statement isn't used in the compiled template.
-	     * var compiled = _.template('hi <%= data.user %>!', { 'variable': 'data' });
+	     * var compiled = _.template('hi <%= data.users %>!', { 'variable': 'data' });
 	     * compiled.source;
 	     * // => function(data) {
 	     * //   var __t, __p = '';
-	     * //   __p += 'hi ' + ((__t = ( data.user )) == null ? '' : __t) + '!';
+	     * //   __p += 'hi ' + ((__t = ( data.users )) == null ? '' : __t) + '!';
 	     * //   return __p;
 	     * // }
 	     *
 	     * // Use custom template delimiters.
 	     * _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
-	     * var compiled = _.template('hello {{ user }}!');
-	     * compiled({ 'user': 'mustache' });
+	     * var compiled = _.template('hello {{ users }}!');
+	     * compiled({ 'users': 'mustache' });
 	     * // => 'hello mustache!'
 	     *
 	     * // Use the `source` property to inline compiled templates for meaningful
@@ -18146,20 +18146,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @example
 	     *
 	     * var users = [
-	     *   { 'user': 'barney', 'age': 36, 'active': true },
-	     *   { 'user': 'fred',   'age': 40, 'active': false }
+	     *   { 'users': 'barney', 'age': 36, 'active': true },
+	     *   { 'users': 'fred',   'age': 40, 'active': false }
 	     * ];
 	     *
 	     * // The `_.matches` iteratee shorthand.
-	     * _.filter(users, _.iteratee({ 'user': 'barney', 'active': true }));
-	     * // => [{ 'user': 'barney', 'age': 36, 'active': true }]
+	     * _.filter(users, _.iteratee({ 'users': 'barney', 'active': true }));
+	     * // => [{ 'users': 'barney', 'age': 36, 'active': true }]
 	     *
 	     * // The `_.matchesProperty` iteratee shorthand.
-	     * _.filter(users, _.iteratee(['user', 'fred']));
-	     * // => [{ 'user': 'fred', 'age': 40 }]
+	     * _.filter(users, _.iteratee(['users', 'fred']));
+	     * // => [{ 'users': 'fred', 'age': 40 }]
 	     *
 	     * // The `_.property` iteratee shorthand.
-	     * _.map(users, _.iteratee('user'));
+	     * _.map(users, _.iteratee('users'));
 	     * // => ['barney', 'fred']
 	     *
 	     * // Create custom iteratee shorthands.
@@ -22399,7 +22399,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//   modules, so it is better not to alter this value unless you know what
 	//   you're doing.
 	function buildCanvas(data, options) {
-	   
+
 	    var canvas = [];
 	    var background = data.background || '#fff';
 	    var foreground = data.foreground || '#000';
@@ -22408,12 +22408,12 @@ return /******/ (function(modules) { // webpackBootstrap
 		var n = matrix.length;
 		var modSize = Math.floor( options.fit ? options.fit/n : 5 );
 		var size = n * modSize;
-		
+
 	    canvas.push({
 	      type: 'rect',
 	      x: 0, y: 0, w: size, h: size, lineWidth: 0, color: background
 	    });
-	    
+
 		for (var i = 0; i < n; ++i) {
 			for (var j = 0; j < n; ++j) {
 	            if(matrix[i][j]) {
@@ -22429,12 +22429,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	        }
 	    }
-	    
+
 	    return {
 	        canvas: canvas,
 	        size: size
 	    };
-			
+
 	}
 
 	function measure(node) {
@@ -24103,7 +24103,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (er instanceof Error) {
 	        throw er; // Unhandled 'error' event
 	      } else {
-	        // At least give some kind of context to the user
+	        // At least give some kind of context to the users
 	        var err = new Error('Uncaught, unspecified "error" event. (' + er + ')');
 	        err.context = er;
 	        throw err;
@@ -24829,7 +24829,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// Also, if we have no data yet, we can stand some
 	// more bytes.  This is to work around cases where hwm=0,
 	// such as the repl.  Also, if the push() triggered a
-	// readable event, and the user called read(largeNumber) such that
+	// readable event, and the users called read(largeNumber) such that
 	// needReadable was set, then we ought to push more, so that another
 	// 'readable' event will be triggered.
 	function needMoreData(state) {
@@ -24956,7 +24956,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this._read(state.highWaterMark);
 	    state.sync = false;
 	    // If _read pushed data synchronously, then `reading` will be false,
-	    // and we need to re-evaluate how much data we can return to the user.
+	    // and we need to re-evaluate how much data we can return to the users.
 	    if (!state.reading) n = howMuchToRead(nOrig, state);
 	  }
 
@@ -25026,7 +25026,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  flow(stream);
 	}
 
-	// at this point, the user has presumably seen the 'readable' event,
+	// at this point, the users has presumably seen the 'readable' event,
 	// and called read() to consume some data.  that may have triggered
 	// in turn another _read(n) call, in which case reading = true if
 	// it's in progress.
@@ -25125,7 +25125,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (state.awaitDrain && (!dest._writableState || dest._writableState.needDrain)) ondrain();
 	  }
 
-	  // If the user pushes more data while we're writing to dest then we'll end up
+	  // If the users pushes more data while we're writing to dest then we'll end up
 	  // in ondata again. However, we only want to increase awaitDrain once because
 	  // dest will only emit one 'drain' event for the multiple writes.
 	  // => Introduce a guard on increasing awaitDrain.
@@ -25136,7 +25136,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    increasedAwaitDrain = false;
 	    var ret = dest.write(chunk);
 	    if (false === ret && !increasedAwaitDrain) {
-	      // If the user unpiped during `dest.write()`, it is possible
+	      // If the users unpiped during `dest.write()`, it is possible
 	      // to get stuck in a permanently paused state if that write
 	      // also returned false.
 	      // => Check whether `dest` is still a piping destination.
@@ -25283,7 +25283,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	// pause() and resume() are remnants of the legacy readable stream API
-	// If the user uses them, then switch into old mode.
+	// If the users uses them, then switch into old mode.
 	Readable.prototype.resume = function () {
 	  var state = this._readableState;
 	  if (!state.flowing) {
@@ -26098,7 +26098,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    onwrite(stream, er);
 	  };
 
-	  // the callback that the user supplies to write(chunk,encoding,cb)
+	  // the callback that the users supplies to write(chunk,encoding,cb)
 	  this.writecb = null;
 
 	  // the amount that is being written when _write is called.
@@ -26107,7 +26107,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.bufferedRequest = null;
 	  this.lastBufferedRequest = null;
 
-	  // number of pending user-supplied write callbacks
+	  // number of pending users-supplied write callbacks
 	  // this must be 0 before 'finish' can be emitted
 	  this.pendingcb = 0;
 
@@ -28248,7 +28248,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function Zlib(mode) {
 	  if (mode < exports.DEFLATE || mode > exports.UNZIP)
 	    throw new TypeError("Bad argument");
-	    
+
 	  this.mode = mode;
 	  this.init_done = false;
 	  this.write_in_progress = false;
@@ -28266,18 +28266,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.memLevel = memLevel;
 	  this.strategy = strategy;
 	  // dictionary not supported.
-	  
+
 	  if (this.mode === exports.GZIP || this.mode === exports.GUNZIP)
 	    this.windowBits += 16;
-	    
+
 	  if (this.mode === exports.UNZIP)
 	    this.windowBits += 32;
-	    
+
 	  if (this.mode === exports.DEFLATERAW || this.mode === exports.INFLATERAW)
 	    this.windowBits = -this.windowBits;
-	    
+
 	  this.strm = new zstream();
-	  
+
 	  switch (this.mode) {
 	    case exports.DEFLATE:
 	    case exports.GZIP:
@@ -28303,12 +28303,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    default:
 	      throw new Error("Unknown mode " + this.mode);
 	  }
-	  
+
 	  if (status !== exports.Z_OK) {
 	    this._error(status);
 	    return;
 	  }
-	  
+
 	  this.write_in_progress = false;
 	  this.init_done = true;
 	};
@@ -28320,31 +28320,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	Zlib.prototype._writeCheck = function() {
 	  if (!this.init_done)
 	    throw new Error("write before init");
-	    
+
 	  if (this.mode === exports.NONE)
 	    throw new Error("already finalized");
-	    
+
 	  if (this.write_in_progress)
 	    throw new Error("write already in progress");
-	    
+
 	  if (this.pending_close)
 	    throw new Error("close is pending");
 	};
 
-	Zlib.prototype.write = function(flush, input, in_off, in_len, out, out_off, out_len) {    
+	Zlib.prototype.write = function(flush, input, in_off, in_len, out, out_off, out_len) {
 	  this._writeCheck();
 	  this.write_in_progress = true;
-	  
+
 	  var self = this;
 	  process.nextTick(function() {
 	    self.write_in_progress = false;
 	    var res = self._write(flush, input, in_off, in_len, out, out_off, out_len);
 	    self.callback(res[0], res[1]);
-	    
+
 	    if (self.pending_close)
 	      self.close();
 	  });
-	  
+
 	  return this;
 	};
 
@@ -28362,7 +28362,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Zlib.prototype._write = function(flush, input, in_off, in_len, out, out_off, out_len) {
 	  this.write_in_progress = true;
-	  
+
 	  if (flush !== exports.Z_NO_FLUSH &&
 	      flush !== exports.Z_PARTIAL_FLUSH &&
 	      flush !== exports.Z_SYNC_FLUSH &&
@@ -28371,18 +28371,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	      flush !== exports.Z_BLOCK) {
 	    throw new Error("Invalid flush value");
 	  }
-	  
+
 	  if (input == null) {
 	    input = new Buffer(0);
 	    in_len = 0;
 	    in_off = 0;
 	  }
-	  
+
 	  if (out._set)
 	    out.set = out._set;
 	  else
 	    out.set = bufferSet;
-	  
+
 	  var strm = this.strm;
 	  strm.avail_in = in_len;
 	  strm.input = input;
@@ -28390,7 +28390,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  strm.avail_out = out_len;
 	  strm.output = out;
 	  strm.next_out = out_off;
-	  
+
 	  switch (this.mode) {
 	    case exports.DEFLATE:
 	    case exports.GZIP:
@@ -28406,11 +28406,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    default:
 	      throw new Error("Unknown mode " + this.mode);
 	  }
-	  
+
 	  if (status !== exports.Z_STREAM_END && status !== exports.Z_OK) {
 	    this._error(status);
 	  }
-	  
+
 	  this.write_in_progress = false;
 	  return [strm.avail_in, strm.avail_out];
 	};
@@ -28420,15 +28420,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.pending_close = true;
 	    return;
 	  }
-	  
+
 	  this.pending_close = false;
-	  
+
 	  if (this.mode === exports.DEFLATE || this.mode === exports.GZIP || this.mode === exports.DEFLATERAW) {
 	    zlib_deflate.deflateEnd(this.strm);
 	  } else {
 	    zlib_inflate.inflateEnd(this.strm);
 	  }
-	  
+
 	  this.mode = exports.NONE;
 	};
 
@@ -28443,7 +28443,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var status = zlib_inflate.inflateReset(this.strm);
 	      break;
 	  }
-	  
+
 	  if (status !== exports.Z_OK) {
 	    this._error(status);
 	  }
@@ -28451,7 +28451,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Zlib.prototype._error = function(status) {
 	  this.onerror(msg[status] + ': ' + this.strm.msg, status);
-	  
+
 	  this.write_in_progress = false;
 	  if (this.pending_close)
 	    this.close();
@@ -29617,7 +29617,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   */
 
 	  this.window_size = 0;
-	  /* Actual size of window: 2*wSize, except when the user input buffer
+	  /* Actual size of window: 2*wSize, except when the users input buffer
 	   * is directly used as sliding window.
 	   */
 
@@ -34257,7 +34257,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	function formatValue(ctx, value, recurseTimes) {
-	  // Provide a hook for user-specified inspect functions.
+	  // Provide a hook for users-specified inspect functions.
 	  // Check that value is an object with an inspect function on it
 	  if (ctx.customInspect &&
 	      value &&
@@ -36417,7 +36417,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this._fontSize = 12;
 	      this._font = null;
 	      this._registeredFonts = {};
-	      
+
 	    },
 	    font: function(src, family, size) {
 	      var cacheKey, font, id, ref;
@@ -41492,7 +41492,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    exclusive: true,
 	    noAlternates: 0
 	  },
-	  // user defined options
+	  // users defined options
 	  designComplexity: {
 	    code: 18,
 	    exclusive: true,
@@ -49513,7 +49513,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    var res = encoder.write(str);
 	    var trail = encoder.end();
-	    
+
 	    return (trail && trail.length > 0) ? Buffer.concat([res, trail]) : res;
 	}
 
@@ -49553,7 +49553,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	iconv.getCodec = function getCodec(encoding) {
 	    if (!iconv.encodings)
 	        iconv.encodings = __webpack_require__(80); // Lazy load all encoding definitions.
-	    
+
 	    // Canonicalize encoding name: strip all non-alphanumeric chars and appended year.
 	    var enc = (''+encoding).toLowerCase().replace(/[^0-9a-z]|:\d{4}$/g, "");
 
@@ -49577,7 +49577,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	                if (!codecOptions.encodingName)
 	                    codecOptions.encodingName = enc;
-	                
+
 	                enc = codecDef.type;
 	                break;
 
@@ -49713,7 +49713,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    __webpack_require__(88),
 	];
 
-	// Put all encoding/alias/codec definitions to single object and export it. 
+	// Put all encoding/alias/codec definitions to single object and export it.
 	for (var i = 0; i < modules.length; i++) {
 	    var module = modules[i];
 	    for (var enc in module)
@@ -49863,7 +49863,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	InternalDecoderCesu8.prototype.write = function(buf) {
-	    var acc = this.acc, contBytes = this.contBytes, accBytes = this.accBytes, 
+	    var acc = this.acc, contBytes = this.contBytes, accBytes = this.accBytes,
 	        res = '';
 	    for (var i = 0; i < buf.length; i++) {
 	        var curByte = buf[i];
@@ -50036,7 +50036,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // Codec is not chosen yet. Accumulate initial bytes.
 	        this.initialBytes.push(buf);
 	        this.initialBytesLen += buf.length;
-	        
+
 	        if (this.initialBytesLen < 16) // We need more bytes to use space heuristic (see below)
 	            return '';
 
@@ -50131,8 +50131,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // Naive implementation.
 	    // Non-direct chars are encoded as "+<base64>-"; single "+" char is encoded as "+-".
 	    return new Buffer(str.replace(nonDirectChars, function(chunk) {
-	        return "+" + (chunk === '+' ? '' : 
-	            this.iconv.encode(chunk, 'utf16-be').toString('base64').replace(/=+$/, '')) 
+	        return "+" + (chunk === '+' ? '' :
+	            this.iconv.encode(chunk, 'utf16-be').toString('base64').replace(/=+$/, ''))
 	            + "-";
 	    }.bind(this)));
 	}
@@ -50154,7 +50154,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	for (var i = 0; i < 256; i++)
 	    base64Chars[i] = base64Regex.test(String.fromCharCode(i));
 
-	var plusChar = '+'.charCodeAt(0), 
+	var plusChar = '+'.charCodeAt(0),
 	    minusChar = '-'.charCodeAt(0),
 	    andChar = '&'.charCodeAt(0);
 
@@ -50402,17 +50402,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */(function(Buffer) {"use strict"
 
 	// Single-byte codec. Needs a 'chars' string parameter that contains 256 or 128 chars that
-	// correspond to encoded bytes (if 128 - then lower half is ASCII). 
+	// correspond to encoded bytes (if 128 - then lower half is ASCII).
 
 	exports._sbcs = SBCSCodec;
 	function SBCSCodec(codecOptions, iconv) {
 	    if (!codecOptions)
 	        throw new Error("SBCS codec is called without the data.")
-	    
+
 	    // Prepare char buffer for decoding.
 	    if (!codecOptions.chars || (codecOptions.chars.length !== 128 && codecOptions.chars.length !== 256))
 	        throw new Error("Encoding '"+codecOptions.type+"' has incorrect 'chars' (must be of len 128 or 256)");
-	    
+
 	    if (codecOptions.chars.length === 128) {
 	        var asciiString = "";
 	        for (var i = 0; i < 128; i++)
@@ -50421,7 +50421,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    this.decodeBuf = new Buffer(codecOptions.chars, 'ucs2');
-	    
+
 	    // Encoding buffer.
 	    var encodeBuf = new Buffer(65536);
 	    encodeBuf.fill(iconv.defaultCharSingleByte.charCodeAt(0));
@@ -50444,7 +50444,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var buf = new Buffer(str.length);
 	    for (var i = 0; i < str.length; i++)
 	        buf[i] = this.encodeBuf[str.charCodeAt(i)];
-	    
+
 	    return buf;
 	}
 
@@ -51152,7 +51152,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.decodeTables = [];
 	    this.decodeTables[0] = UNASSIGNED_NODE.slice(0); // Create root node.
 
-	    // Sometimes a MBCS char corresponds to a sequence of unicode chars. We store them as arrays of integers here. 
+	    // Sometimes a MBCS char corresponds to a sequence of unicode chars. We store them as arrays of integers here.
 	    this.decodeTableSeq = [];
 
 	    // Actual mapping tables consist of chunks. Use them to fill up decode tables.
@@ -51161,7 +51161,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    this.defaultCharUnicode = iconv.defaultCharUnicode;
 
-	    
+
 	    // Encode tables: Unicode -> DBCS.
 
 	    // `encodeTable` is array mapping from unicode char to encoded char. All its values are integers for performance.
@@ -51170,7 +51170,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    //         == UNASSIGNED -> no conversion found. Output a default char.
 	    //         <= SEQ_START  -> it's an index in encodeTableSeq, see below. The character starts a sequence.
 	    this.encodeTable = [];
-	    
+
 	    // `encodeTableSeq` is used when a sequence of unicode characters is encoded as a single code. We use a tree of
 	    // objects where keys correspond to characters in sequence and leafs are the encoded dbcs values. A special DEF_CHAR key
 	    // means end of sequence (needed when one sequence is a strict subsequence of another).
@@ -51188,7 +51188,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                for (var j = val.from; j <= val.to; j++)
 	                    skipEncodeChars[j] = true;
 	        }
-	        
+
 	    // Use decode trie to recursively fill out encode tables.
 	    this._fillEncodeTable(0, 0, skipEncodeChars);
 
@@ -51225,7 +51225,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            thirdByteNode[i] = NODE_START - fourthByteNodeIdx;
 	        for (var i = 0x30; i <= 0x39; i++)
 	            fourthByteNode[i] = GB18030_CODE
-	    }        
+	    }
 	}
 
 	DBCSCodec.prototype.encoder = DBCSEncoder;
@@ -51290,7 +51290,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                else
 	                    writeTable[curAddr++] = code; // Basic char
 	            }
-	        } 
+	        }
 	        else if (typeof part === "number") { // Integer, meaning increasing sequence starting with prev character.
 	            var charCode = writeTable[curAddr - 1] + 1;
 	            for (var l = 0; l < part; l++)
@@ -51321,7 +51321,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	DBCSCodec.prototype._setEncodeSequence = function(seq, dbcsCode) {
-	    
+
 	    // Get the root of character tree according to first character of the sequence.
 	    var uCode = seq[0];
 	    var bucket = this._getEncodeBucket(uCode);
@@ -51382,7 +51382,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // Encoder state
 	    this.leadSurrogate = -1;
 	    this.seqObj = undefined;
-	    
+
 	    // Static data
 	    this.encodeTable = codec.encodeTable;
 	    this.encodeTableSeq = codec.encodeTableSeq;
@@ -51391,7 +51391,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	DBCSEncoder.prototype.write = function(str) {
-	    var newBuf = new Buffer(str.length * (this.gb18030 ? 4 : 3)), 
+	    var newBuf = new Buffer(str.length * (this.gb18030 ? 4 : 3)),
 	        leadSurrogate = this.leadSurrogate,
 	        seqObj = this.seqObj, nextChar = -1,
 	        i = 0, j = 0;
@@ -51404,7 +51404,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        else {
 	            var uCode = nextChar;
-	            nextChar = -1;    
+	            nextChar = -1;
 	        }
 
 	        // 1. Handle surrogates.
@@ -51426,7 +51426,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    // Incomplete surrogate pair - only trail surrogate found.
 	                    uCode = UNASSIGNED;
 	                }
-	                
+
 	            }
 	        }
 	        else if (leadSurrogate !== -1) {
@@ -51467,7 +51467,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var subtable = this.encodeTable[uCode >> 8];
 	            if (subtable !== undefined)
 	                dbcsCode = subtable[uCode & 0xFF];
-	            
+
 	            if (dbcsCode <= SEQ_START) { // Sequence start
 	                seqObj = this.encodeTableSeq[SEQ_START-dbcsCode];
 	                continue;
@@ -51490,7 +51490,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // 3. Write dbcsCode character.
 	        if (dbcsCode === UNASSIGNED)
 	            dbcsCode = this.defaultCharSingleByte;
-	        
+
 	        if (dbcsCode < 0x100) {
 	            newBuf[j++] = dbcsCode;
 	        }
@@ -51537,7 +51537,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        newBuf[j++] = this.defaultCharSingleByte;
 	        this.leadSurrogate = -1;
 	    }
-	    
+
 	    return newBuf.slice(0, j);
 	}
 
@@ -51561,21 +51561,21 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	DBCSDecoder.prototype.write = function(buf) {
 	    var newBuf = new Buffer(buf.length*2),
-	        nodeIdx = this.nodeIdx, 
+	        nodeIdx = this.nodeIdx,
 	        prevBuf = this.prevBuf, prevBufOffset = this.prevBuf.length,
 	        seqStart = -this.prevBuf.length, // idx of the start of current parsed sequence.
 	        uCode;
 
 	    if (prevBufOffset > 0) // Make prev buf overlap a little to make it easier to slice later.
 	        prevBuf = Buffer.concat([prevBuf, buf.slice(0, 10)]);
-	    
+
 	    for (var i = 0, j = 0; i < buf.length; i++) {
 	        var curByte = (i >= 0) ? buf[i] : prevBuf[i + prevBufOffset];
 
 	        // Lookup in current trie node.
 	        var uCode = this.decodeTables[nodeIdx][curByte];
 
-	        if (uCode >= 0) { 
+	        if (uCode >= 0) {
 	            // Normal character, just use it.
 	        }
 	        else if (uCode === UNASSIGNED) { // Unknown char.
@@ -51607,7 +51607,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            throw new Error("iconv-lite internal error: invalid decoding table value " + uCode + " at " + nodeIdx + "/" + curByte);
 
 	        // Write the character to buffer, handling higher planes using surrogate pair.
-	        if (uCode > 0xFFFF) { 
+	        if (uCode > 0xFFFF) {
 	            uCode -= 0x10000;
 	            var uCodeLead = 0xD800 + Math.floor(uCode / 0x400);
 	            newBuf[j++] = uCodeLead & 0xFF;
@@ -51677,11 +51677,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	// require()-s are direct to support Browserify.
 
 	module.exports = {
-	    
+
 	    // == Japanese/ShiftJIS ====================================================
 	    // All japanese encodings are based on JIS X set of standards:
 	    // JIS X 0201 - Single-byte encoding of ASCII + ¥ + Kana chars at 0xA1-0xDF.
-	    // JIS X 0208 - Main set of 6879 characters, placed in 94x94 plane, to be encoded by 2 bytes. 
+	    // JIS X 0208 - Main set of 6879 characters, placed in 94x94 plane, to be encoded by 2 bytes.
 	    //              Has several variations in 1978, 1983, 1990 and 1997.
 	    // JIS X 0212 - Supplementary plane of 6067 chars in 94x94 plane. 1990. Effectively dead.
 	    // JIS X 0213 - Extension and modern replacement of 0208 and 0212. Total chars: 11233.
@@ -51699,7 +51699,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    //               0x8F, (0xA1-0xFE)x2 - 0212 plane (94x94).
 	    //  * JIS X 208: 7-bit, direct encoding of 0208. Byte ranges: 0x21-0x7E (94 values). Uncommon.
 	    //               Used as-is in ISO2022 family.
-	    //  * ISO2022-JP: Stateful encoding, with escape sequences to switch between ASCII, 
+	    //  * ISO2022-JP: Stateful encoding, with escape sequences to switch between ASCII,
 	    //                0201-1976 Roman, 0208-1978, 0208-1983.
 	    //  * ISO2022-JP-1: Adds esc seq for 0212-1990.
 	    //  * ISO2022-JP-2: Adds esc seq for GB2313-1980, KSX1001-1992, ISO8859-1, ISO8859-7.
@@ -51759,7 +51759,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        table: function() { return __webpack_require__(91) },
 	    },
 
-	    // GBK (~22000 chars) is an extension of CP936 that added user-mapped chars and some other.
+	    // GBK (~22000 chars) is an extension of CP936 that added users-mapped chars and some other.
 	    'gbk': {
 	        type: '_dbcs',
 	        table: function() { return __webpack_require__(91).concat(__webpack_require__(92)) },
@@ -51811,7 +51811,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    //  * Windows CP 951: Microsoft variant of Big5-HKSCS-2001. Seems to be never public. http://me.abelcheung.org/articles/research/what-is-cp951/
 	    //  * Big5-2003 (Taiwan standard) almost superset of cp950.
 	    //  * Unicode-at-on (UAO) / Mozilla 1.8. Falling out of use on the Web. Not supported by other browsers.
-	    //  * Big5-HKSCS (-2001, -2004, -2008). Hong Kong standard. 
+	    //  * Big5-HKSCS (-2001, -2004, -2008). Hong Kong standard.
 	    //    many unicode code points moved from PUA to Supplementary plane (U+2XXXX) over the years.
 	    //    Plus, it has 4 combining sequences.
 	    //    Seems that Mozilla refused to support it for 10 yrs. https://bugzilla.mozilla.org/show_bug.cgi?id=162431 https://bugzilla.mozilla.org/show_bug.cgi?id=310299
@@ -51822,7 +51822,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    //    In the encoder, it might make sense to support encoding old PUA mappings to Big5 bytes seq-s.
 	    //    Official spec: http://www.ogcio.gov.hk/en/business/tech_promotion/ccli/terms/doc/2003cmp_2008.txt
 	    //                   http://www.ogcio.gov.hk/tc/business/tech_promotion/ccli/terms/doc/hkscs-2008-big5-iso.txt
-	    // 
+	    //
 	    // Current understanding of how to deal with Big5(-HKSCS) is in the Encoding Standard, http://encoding.spec.whatwg.org/#big5-encoder
 	    // Unicode mapping (http://www.unicode.org/Public/MAPPINGS/OBSOLETE/EASTASIA/OTHER/BIG5.TXT) is said to be wrong.
 
@@ -60171,7 +60171,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// == Exports ==================================================================
 	module.exports = function(iconv) {
-	    
+
 	    // Additional Public API.
 	    iconv.encodeStream = function encodeStream(encoding, options) {
 	        return new IconvLiteEncoderStream(iconv.getEncoder(encoding, options), options);
@@ -60266,7 +60266,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	IconvLiteDecoderStream.prototype._flush = function(done) {
 	    try {
 	        var res = this.conv.end();
-	        if (res && res.length) this.push(res, this.encoding);                
+	        if (res && res.length) this.push(res, this.encoding);
 	        done();
 	    }
 	    catch (e) {
@@ -60313,7 +60313,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 
 	        var nodeNativeEncodings = {
-	            'hex': true, 'utf8': true, 'utf-8': true, 'ascii': true, 'binary': true, 
+	            'hex': true, 'utf8': true, 'utf-8': true, 'ascii': true, 'binary': true,
 	            'base64': true, 'ucs2': true, 'ucs-2': true, 'utf16le': true, 'utf-16le': true,
 	        };
 
@@ -61981,7 +61981,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	$export.B = 16;  // bind
 	$export.W = 32;  // wrap
 	$export.U = 64;  // safe
-	$export.R = 128; // real proto method for `library` 
+	$export.R = 128; // real proto method for `library`
 	module.exports = $export;
 
 /***/ },
@@ -63143,7 +63143,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 193 */
 /***/ function(module, exports) {
 
-	
+
 
 /***/ },
 /* 194 */
@@ -64072,10 +64072,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.sourceIndex = 0;
 	  this.tag = 0;
 	  this.bitcount = 0;
-	  
+
 	  this.dest = dest;
 	  this.destLen = 0;
-	  
+
 	  this.ltree = new Tree();  /* dynamic length/symbol tree */
 	  this.dtree = new Tree();  /* dynamic distance tree */
 	}
@@ -64217,7 +64217,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    d.tag |= d.source[d.sourceIndex++] << d.bitcount;
 	    d.bitcount += 8;
 	  }
-	  
+
 	  var sum = 0, cur = 0, len = 0;
 	  var tag = d.tag;
 
@@ -64230,7 +64230,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    sum += t.table[len];
 	    cur -= t.table[len];
 	  } while (cur >= 0);
-	  
+
 	  d.tag = tag;
 	  d.bitcount -= len;
 
@@ -64341,7 +64341,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function tinf_inflate_uncompressed_block(d) {
 	  var length, invlength;
 	  var i;
-	  
+
 	  /* unread from bitbuffer */
 	  while (d.bitcount > 8) {
 	    d.sourceIndex--;
@@ -64414,7 +64414,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    else
 	      return d.dest.subarray(0, d.destLen);
 	  }
-	  
+
 	  return d.dest;
 	}
 
@@ -64998,17 +64998,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (br.readBits(1) === 0) {
 	    return 16;
 	  }
-	  
+
 	  n = br.readBits(3);
 	  if (n > 0) {
 	    return 17 + n;
 	  }
-	  
+
 	  n = br.readBits(3);
 	  if (n > 0) {
 	    return 8 + n;
 	  }
-	  
+
 	  return 17;
 	}
 
@@ -65033,32 +65033,32 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	function DecodeMetaBlockLength(br) {
-	  var out = new MetaBlockLength;  
+	  var out = new MetaBlockLength;
 	  var size_nibbles;
 	  var size_bytes;
 	  var i;
-	  
+
 	  out.input_end = br.readBits(1);
 	  if (out.input_end && br.readBits(1)) {
 	    return out;
 	  }
-	  
+
 	  size_nibbles = br.readBits(2) + 4;
 	  if (size_nibbles === 7) {
 	    out.is_metadata = true;
-	    
+
 	    if (br.readBits(1) !== 0)
 	      throw new Error('Invalid reserved bit');
-	    
+
 	    size_bytes = br.readBits(2);
 	    if (size_bytes === 0)
 	      return out;
-	    
+
 	    for (i = 0; i < size_bytes; i++) {
 	      var next_byte = br.readBits(8);
 	      if (i + 1 === size_bytes && size_bytes > 1 && next_byte === 0)
 	        throw new Error('Invalid size byte');
-	      
+
 	      out.meta_block_length |= next_byte << (i * 8);
 	    }
 	  } else {
@@ -65066,24 +65066,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var next_nibble = br.readBits(4);
 	      if (i + 1 === size_nibbles && size_nibbles > 4 && next_nibble === 0)
 	        throw new Error('Invalid size nibble');
-	      
+
 	      out.meta_block_length |= next_nibble << (i * 4);
 	    }
 	  }
-	  
+
 	  ++out.meta_block_length;
-	  
+
 	  if (!out.input_end && !out.is_metadata) {
 	    out.is_uncompressed = br.readBits(1);
 	  }
-	  
+
 	  return out;
 	}
 
 	/* Decodes the next Huffman code from bit-stream. */
 	function ReadSymbol(table, index, br) {
 	  var start_index = index;
-	  
+
 	  var nbits;
 	  br.fillBitWindow();
 	  index += (br.val_ >>> br.bit_pos_) & HUFFMAN_TABLE_MASK;
@@ -65103,17 +65103,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var repeat = 0;
 	  var repeat_code_len = 0;
 	  var space = 32768;
-	  
+
 	  var table = [];
 	  for (var i = 0; i < 32; i++)
 	    table.push(new HuffmanCode(0, 0));
-	  
+
 	  BrotliBuildHuffmanTable(table, 0, 5, code_length_code_lengths, CODE_LENGTH_CODES);
 
 	  while (symbol < num_symbols && space > 0) {
 	    var p = 0;
 	    var code_len;
-	    
+
 	    br.readMoreInput();
 	    br.fillBitWindow();
 	    p += (br.val_ >>> br.bit_pos_) & 31;
@@ -65148,12 +65148,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (symbol + repeat_delta > num_symbols) {
 	        throw new Error('[ReadHuffmanCodeLengths] symbol + repeat_delta > num_symbols');
 	      }
-	      
+
 	      for (var x = 0; x < repeat_delta; x++)
 	        code_lengths[symbol + x] = repeat_code_len;
-	      
+
 	      symbol += repeat_delta;
-	      
+
 	      if (repeat_code_len !== 0) {
 	        space -= repeat_delta << (15 - repeat_code_len);
 	      }
@@ -65162,7 +65162,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (space !== 0) {
 	    throw new Error("[ReadHuffmanCodeLengths] space = " + space);
 	  }
-	  
+
 	  for (; symbol < num_symbols; symbol++)
 	    code_lengths[symbol] = 0;
 	}
@@ -65171,9 +65171,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var table_size = 0;
 	  var simple_code_or_skip;
 	  var code_lengths = new Uint8Array(alphabet_size);
-	  
+
 	  br.readMoreInput();
-	  
+
 	  /* simple_code_or_skip is used as follows:
 	     1 for simple code;
 	     0 for no skipping, 2 skips 2 code lengths, 3 skips 3 code lengths */
@@ -65209,7 +65209,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (symbols[0] === symbols[1]) {
 	          throw new Error('[ReadHuffmanCode] invalid symbols');
 	        }
-	        
+
 	        code_lengths[symbols[1]] = 1;
 	        break;
 	      case 4:
@@ -65221,7 +65221,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            (symbols[2] === symbols[3])) {
 	          throw new Error('[ReadHuffmanCode] invalid symbols');
 	        }
-	        
+
 	        if (br.readBits(1)) {
 	          code_lengths[symbols[2]] = 3;
 	          code_lengths[symbols[3]] = 3;
@@ -65237,9 +65237,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var num_codes = 0;
 	    /* Static Huffman code for the code length code lengths */
 	    var huff = [
-	      new HuffmanCode(2, 0), new HuffmanCode(2, 4), new HuffmanCode(2, 3), new HuffmanCode(3, 2), 
+	      new HuffmanCode(2, 0), new HuffmanCode(2, 4), new HuffmanCode(2, 3), new HuffmanCode(3, 2),
 	      new HuffmanCode(2, 0), new HuffmanCode(2, 4), new HuffmanCode(2, 3), new HuffmanCode(4, 1),
-	      new HuffmanCode(2, 0), new HuffmanCode(2, 4), new HuffmanCode(2, 3), new HuffmanCode(3, 2), 
+	      new HuffmanCode(2, 0), new HuffmanCode(2, 4), new HuffmanCode(2, 3), new HuffmanCode(3, 2),
 	      new HuffmanCode(2, 0), new HuffmanCode(2, 4), new HuffmanCode(2, 3), new HuffmanCode(4, 5)
 	    ];
 	    for (i = simple_code_or_skip; i < CODE_LENGTH_CODES && space > 0; ++i) {
@@ -65256,19 +65256,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	        ++num_codes;
 	      }
 	    }
-	    
+
 	    if (!(num_codes === 1 || space === 0))
 	      throw new Error('[ReadHuffmanCode] invalid num_codes or space');
-	    
+
 	    ReadHuffmanCodeLengths(code_length_code_lengths, alphabet_size, code_lengths, br);
 	  }
-	  
+
 	  table_size = BrotliBuildHuffmanTable(tables, table, HUFFMAN_TABLE_BITS, code_lengths, alphabet_size);
-	  
+
 	  if (table_size === 0) {
 	    throw new Error("[ReadHuffmanCode] BuildHuffmanTable failed: ");
 	  }
-	  
+
 	  return table_size;
 	}
 
@@ -65316,7 +65316,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function HuffmanTreeGroup(alphabet_size, num_htrees) {
 	  this.alphabet_size = alphabet_size;
 	  this.num_htrees = num_htrees;
-	  this.codes = new Array(num_htrees + num_htrees * kMaxHuffmanTableSize[(alphabet_size + 31) >>> 5]);  
+	  this.codes = new Array(num_htrees + num_htrees * kMaxHuffmanTableSize[(alphabet_size + 31) >>> 5]);
 	  this.htrees = new Uint32Array(num_htrees);
 	}
 
@@ -65337,7 +65337,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var max_run_length_prefix = 0;
 	  var table;
 	  var i;
-	  
+
 	  br.readMoreInput();
 	  var num_htrees = out.num_htrees = DecodeVarLenUint8(br) + 1;
 
@@ -65350,14 +65350,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (use_rle_for_zeros) {
 	    max_run_length_prefix = br.readBits(4) + 1;
 	  }
-	  
+
 	  table = [];
 	  for (i = 0; i < HUFFMAN_MAX_TABLE_SIZE; i++) {
 	    table[i] = new HuffmanCode(0, 0);
 	  }
-	  
+
 	  ReadHuffmanCode(num_htrees + max_run_length_prefix, table, 0, br);
-	  
+
 	  for (i = 0; i < context_map_size;) {
 	    var code;
 
@@ -65383,7 +65383,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (br.readBits(1)) {
 	    InverseMoveToFrontTransform(context_map, context_map_size);
 	  }
-	  
+
 	  return out;
 	}
 
@@ -65444,7 +65444,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var tail = BrotliBitReader.IBUF_MASK + 1 - br_pos;
 	    for (var x = 0; x < tail; x++)
 	      ringbuffer[rb_pos + x] = br.buf_[br_pos + x];
-	    
+
 	    nbytes -= tail;
 	    rb_pos += tail;
 	    len -= tail;
@@ -65453,7 +65453,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  for (var x = 0; x < nbytes; x++)
 	    ringbuffer[rb_pos + x] = br.buf_[br_pos + x];
-	  
+
 	  rb_pos += nbytes;
 	  len -= nbytes;
 
@@ -65461,7 +65461,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     ringbuffer to its beginning and flush the ringbuffer to the output. */
 	  if (rb_pos >= rb_size) {
 	    output.write(ringbuffer, rb_size);
-	    rb_pos -= rb_size;    
+	    rb_pos -= rb_size;
 	    for (var x = 0; x < rb_pos; x++)
 	      ringbuffer[x] = ringbuffer[rb_size + x];
 	  }
@@ -65509,20 +65509,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function BrotliDecompressBuffer(buffer, output_size) {
 	  var input = new BrotliInput(buffer);
-	  
+
 	  if (output_size == null) {
 	    output_size = BrotliDecompressedSize(buffer);
 	  }
-	  
+
 	  var output_buffer = new Uint8Array(output_size);
 	  var output = new BrotliOutput(output_buffer);
-	  
+
 	  BrotliDecompress(input, output);
-	  
+
 	  if (output.pos < output.buffer.length) {
 	    output.buffer = output.buffer.subarray(0, output.pos);
 	  }
-	  
+
 	  return output.buffer;
 	}
 
@@ -65609,7 +65609,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    br.readMoreInput();
-	    
+
 	    var _out = DecodeMetaBlockLength(br);
 	    meta_block_remaining_len = _out.meta_block_length;
 	    if (pos + meta_block_remaining_len > output.buffer.length) {
@@ -65617,26 +65617,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var tmp = new Uint8Array( pos + meta_block_remaining_len );
 	      tmp.set( output.buffer );
 	      output.buffer = tmp;
-	    }    
+	    }
 	    input_end = _out.input_end;
 	    is_uncompressed = _out.is_uncompressed;
-	    
+
 	    if (_out.is_metadata) {
 	      JumpToByteBoundary(br);
-	      
+
 	      for (; meta_block_remaining_len > 0; --meta_block_remaining_len) {
 	        br.readMoreInput();
 	        /* Read one byte and ignore it. */
 	        br.readBits(8);
 	      }
-	      
+
 	      continue;
 	    }
-	    
+
 	    if (meta_block_remaining_len === 0) {
 	      continue;
 	    }
-	    
+
 	    if (is_uncompressed) {
 	      br.bit_pos_ = (br.bit_pos_ + 7) & ~7;
 	      CopyUncompressedBlockToOutput(output, meta_block_remaining_len, pos,
@@ -65644,7 +65644,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      pos += meta_block_remaining_len;
 	      continue;
 	    }
-	    
+
 	    for (i = 0; i < 3; ++i) {
 	      num_block_types[i] = DecodeVarLenUint8(br) + 1;
 	      if (num_block_types[i] >= 2) {
@@ -65654,9 +65654,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        block_type_rb_index[i] = 1;
 	      }
 	    }
-	    
+
 	    br.readMoreInput();
-	    
+
 	    distance_postfix_bits = br.readBits(2);
 	    num_direct_distance_codes = NUM_DISTANCE_SHORT_CODES + (br.readBits(4) << distance_postfix_bits);
 	    distance_postfix_mask = (1 << distance_postfix_bits) - 1;
@@ -65667,15 +65667,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	       br.readMoreInput();
 	       context_modes[i] = (br.readBits(2) << 1);
 	    }
-	    
+
 	    var _o1 = DecodeContextMap(num_block_types[0] << kLiteralContextBits, br);
 	    num_literal_htrees = _o1.num_htrees;
 	    context_map = _o1.context_map;
-	    
+
 	    var _o2 = DecodeContextMap(num_block_types[2] << kDistanceContextBits, br);
 	    num_dist_htrees = _o2.num_htrees;
 	    dist_context_map = _o2.context_map;
-	    
+
 	    hgroup[0] = new HuffmanTreeGroup(kNumLiteralCodes, num_literal_htrees);
 	    hgroup[1] = new HuffmanTreeGroup(kNumInsertAndCopyCodes, num_block_types[1]);
 	    hgroup[2] = new HuffmanTreeGroup(num_distance_codes, num_dist_htrees);
@@ -65705,7 +65705,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var copy_dst;
 
 	      br.readMoreInput();
-	      
+
 	      if (block_length[1] === 0) {
 	        DecodeBlockType(num_block_types[1],
 	                        block_type_trees, 1, block_type, block_type_rb,
@@ -65761,7 +65761,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      if (distance_code < 0) {
 	        var context;
-	        
+
 	        br.readMoreInput();
 	        if (block_length[2] === 0) {
 	          DecodeBlockType(num_block_types[2],
@@ -65823,7 +65823,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            meta_block_remaining_len -= len;
 	            if (copy_dst >= ringbuffer_end) {
 	              output.write(ringbuffer, ringbuffer_size);
-	              
+
 	              for (var _x = 0; _x < (copy_dst - ringbuffer_end); _x++)
 	                ringbuffer[_x] = ringbuffer[ringbuffer_end + _x];
 	            }
@@ -65888,10 +65888,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (this.pos + count > this.buffer.length) {
 	    count = this.buffer.length - this.pos;
 	  }
-	  
+
 	  for (var p = 0; p < count; p++)
 	    buf[i + p] = this.buffer[this.pos + p];
-	  
+
 	  this.pos += count;
 	  return count;
 	}
@@ -65906,7 +65906,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	BrotliOutput.prototype.write = function(buf, count) {
 	  if (this.pos + count > this.buffer.length)
 	    throw new Error('Output buffer is not large enough');
-	  
+
 	  this.buffer.set(buf.subarray(0, count), this.pos);
 	  this.pos += count;
 	  return count;
@@ -65950,7 +65950,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function BrotliBitReader(input) {
 	  this.buf_ = new Uint8Array(BROTLI_IBUF_SIZE);
 	  this.input_ = input;    /* input callback */
-	  
+
 	  this.reset();
 	}
 
@@ -65964,13 +65964,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.bit_pos_ = 0;      /* current bit-reading position in val_ */
 	  this.bit_end_pos_ = 0;  /* bit-reading end position from LSB of val_ */
 	  this.eos_ = 0;          /* input stream is finished */
-	  
+
 	  this.readMoreInput();
 	  for (var i = 0; i < 4; i++) {
 	    this.val_ |= this.buf_[this.pos_] << (8 * i);
 	    ++this.pos_;
 	  }
-	  
+
 	  return this.bit_end_pos_ > 0;
 	};
 
@@ -65998,14 +65998,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (bytes_read < 0) {
 	      throw new Error('Unexpected end of input');
 	    }
-	    
+
 	    if (bytes_read < BROTLI_READ_SIZE) {
 	      this.eos_ = 1;
 	      /* Store 32 bytes of zero after the stream end. */
 	      for (var p = 0; p < 32; p++)
 	        this.buf_[dst + bytes_read + p] = 0;
 	    }
-	    
+
 	    if (dst === 0) {
 	      /* Copy the head of the ringbuffer to the slack region. */
 	      for (var p = 0; p < 32; p++)
@@ -66015,13 +66015,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    } else {
 	      this.buf_ptr_ = 0;
 	    }
-	    
+
 	    this.bit_end_pos_ += bytes_read << 3;
 	  }
 	};
 
 	/* Guarantees that there are at least 24 bits in the buffer. */
-	BrotliBitReader.prototype.fillBitWindow = function() {    
+	BrotliBitReader.prototype.fillBitWindow = function() {
 	  while (this.bit_pos_ >= 8) {
 	    this.val_ >>>= 8;
 	    this.val_ |= this.buf_[this.pos_ & BROTLI_IBUF_MASK] << 24;
@@ -66036,7 +66036,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (32 - this.bit_pos_ < n_bits) {
 	    this.fillBitWindow();
 	  }
-	  
+
 	  var val = ((this.val_ >>> this.bit_pos_) & kBitMask[n_bits]);
 	  this.bit_pos_ += n_bits;
 	  return val;
@@ -66095,10 +66095,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var fs = __webpack_require__(47);
 
 	/**
-	 * The normal dictionary-data.js is quite large, which makes it 
-	 * unsuitable for browser usage. In order to make it smaller, 
+	 * The normal dictionary-data.js is quite large, which makes it
+	 * unsuitable for browser usage. In order to make it smaller,
 	 * we read dictionary.bin, which is a compressed version of
-	 * the dictionary, and on initial load, Brotli decompresses 
+	 * the dictionary, and on initial load, Brotli decompresses
 	 * it's own dictionary. 😜
 	 */
 	exports.init = function() {
@@ -66196,7 +66196,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      sorted[offset[code_lengths[symbol]]++] = symbol;
 	    }
 	  }
-	  
+
 	  table_bits = root_bits;
 	  table_size = 1 << table_bits;
 	  total_size = table_size;
@@ -66206,7 +66206,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    for (key = 0; key < total_size; ++key) {
 	      root_table[table + key] = new HuffmanCode(0, sorted[0] & 0xffff);
 	    }
-	    
+
 	    return total_size;
 	  }
 
@@ -66239,7 +66239,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      key = GetNextKey(key, len);
 	    }
 	  }
-	  
+
 	  return total_size;
 	}
 
@@ -66615,10 +66615,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.prefix = new Uint8Array(prefix.length);
 	  this.transform = transform;
 	  this.suffix = new Uint8Array(suffix.length);
-	  
+
 	  for (var i = 0; i < prefix.length; i++)
 	    this.prefix[i] = prefix.charCodeAt(i);
-	  
+
 	  for (var i = 0; i < suffix.length; i++)
 	    this.suffix[i] = suffix.charCodeAt(i);
 	}
@@ -66757,13 +66757,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    return 1;
 	  }
-	  
+
 	  /* An overly simplified uppercasing model for utf-8. */
 	  if (p[i] < 0xe0) {
 	    p[i + 1] ^= 32;
 	    return 2;
 	  }
-	  
+
 	  /* An arbitrary transform for three byte characters. */
 	  p[i + 2] ^= 5;
 	  return 3;
@@ -66777,29 +66777,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var i = 0;
 	  var start_idx = idx;
 	  var uppercase;
-	  
+
 	  if (skip > len) {
 	    skip = len;
 	  }
-	  
+
 	  var prefix_pos = 0;
 	  while (prefix_pos < prefix.length) {
 	    dst[idx++] = prefix[prefix_pos++];
 	  }
-	  
+
 	  word += skip;
 	  len -= skip;
-	  
+
 	  if (t <= kOmitLast9) {
 	    len -= t;
 	  }
-	  
+
 	  for (i = 0; i < len; i++) {
 	    dst[idx++] = BrotliDictionary.dictionary[word + i];
 	  }
-	  
+
 	  uppercase = idx - len;
-	  
+
 	  if (t === kUppercaseFirst) {
 	    ToUpperCase(dst, uppercase);
 	  } else if (t === kUppercaseAll) {
@@ -66809,12 +66809,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	      len -= step;
 	    }
 	  }
-	  
+
 	  var suffix_pos = 0;
 	  while (suffix_pos < suffix.length) {
 	    dst[idx++] = suffix[suffix_pos++];
 	  }
-	  
+
 	  return idx - start_idx;
 	}
 
@@ -101511,20 +101511,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	/*
 	# MIT LICENSE
 	# Copyright (c) 2011 Devon Govett
-	# 
-	# Permission is hereby granted, free of charge, to any person obtaining a copy of this 
-	# software and associated documentation files (the "Software"), to deal in the Software 
-	# without restriction, including without limitation the rights to use, copy, modify, merge, 
-	# publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons 
+	#
+	# Permission is hereby granted, free of charge, to any person obtaining a copy of this
+	# software and associated documentation files (the "Software"), to deal in the Software
+	# without restriction, including without limitation the rights to use, copy, modify, merge,
+	# publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
 	# to whom the Software is furnished to do so, subject to the following conditions:
-	# 
-	# The above copyright notice and this permission notice shall be included in all copies or 
+	#
+	# The above copyright notice and this permission notice shall be included in all copies or
 	# substantial portions of the Software.
-	# 
-	# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING 
-	# BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
-	# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
-	# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+	#
+	# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+	# BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+	# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 	*/
 

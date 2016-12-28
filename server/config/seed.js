@@ -5,7 +5,7 @@
 
 'use strict';
 
-//import User from '../api/user/user.model';
+//import User from '../api/users/users.model';
 
 /*User.find({}).remove()
   .then(() => {
@@ -31,12 +31,12 @@
             lastCheked: [142, 86],
             blood: 'O-',
             email: 'la@gi.com',
-            role: 'user',
+            role: 'users',
             password: '0000',
             provider: 'local'
         })
     .then(() => {
-      console.log('finished populating user');
+      console.log('finished populating users');
     });
   });
 */
