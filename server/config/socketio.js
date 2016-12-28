@@ -16,7 +16,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
-  require('./accident.socket').register(socket);
+  require('../api/accidents/accident.socket').register(socket);
 
 }
 
