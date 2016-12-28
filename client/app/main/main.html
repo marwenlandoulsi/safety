@@ -18,20 +18,19 @@
       <input id="filter" type="text", name="filter", ng-model="textFilter">
 <br/>
       <h1 class="page-header">Accidents:</h1>
-      <ul  class="nav nav-tabs nav-stacked " ng-repeat="accident in $ctrl.accidents | filter : textFilter">
+      <ul  class="nav nav-tabs nav-stacked "
+      dir-paginate="accident in $ctrl.accidents | filter : textFilter | orderBy:'createdOn':true | itemsPerPage:10"
+      >
         <li>
           <a href="/#/accidents/{{ accident._id }}">
             <h4>{{accident.name}} </h4>
             <p style="color: black">
-              {{accident.address}} : {{accident.createdOn | date: 'M/d/yy h:mm a'}}
+              {{accident.address}} : {{accident.createdOn | date : 'd MMMM yyyy h:mm a' }}
             </p>
           </a>
         </li>
       </ul>
-
-
     </div>
-
 
     <!-- <div class="col-xs-12 col-sm-8">
       <br/>
@@ -49,7 +48,9 @@
         </div>
       </div>
     </div> -->
+    <dir-pagination-controls max-size="5" direction-links="true"></dir-pagination-controls>
   </div>
+
 </div>
 
 
