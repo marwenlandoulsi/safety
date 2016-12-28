@@ -19,7 +19,7 @@
 <br/>
       <h1 class="page-header">Accidents:</h1>
       <ul  class="nav nav-tabs nav-stacked "
-      dir-paginate="accident in $ctrl.accidents | filter : textFilter | orderBy:'createdOn':true | itemsPerPage:10"
+      dir-paginate="accident in $ctrl.accidents | filter : textFilter | orderBy:'createdOn':true | itemsPerPage:5"
       >
         <li>
           <a href="/#/accidents/{{ accident._id }}">
