@@ -5,6 +5,6 @@ export default function($stateProvider) {
   $stateProvider
     .state('accident', {
       url: '/accidents/:accidentId',
-      template: '<accidents></accidents>',
+      template: '<accident></accident>',
     });
 }
