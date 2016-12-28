@@ -20,7 +20,7 @@
       <h1 class="page-header">Accidents:</h1>
       <ul  class="nav nav-tabs nav-stacked " ng-repeat="accident in $ctrl.accidents | filter : textFilter">
         <li>
-          <a href="/#/accident/{{ accident._id }}">
+          <a href="/#/accidents/{{ accident._id }}">
             <h4>{{accident.name}} </h4>
             <p style="color: black">
               {{accident.address}} : {{accident.createdOn | date: 'M/d/yy h:mm a'}}

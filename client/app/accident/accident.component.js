@@ -38,15 +38,6 @@ export class AccidentController {
         this.accident = response.data;
         this.socket.syncUpdates('accident', this.accident);
       });
-
-    this.$http.get('/api/accidents/'+this.idAccident)
-      .then(
-        response => {
-        this.accident = response.data;
-        this.socket.syncUpdates('accident', this.accident);
-      }
-
-      );
   }
 
   addAccident() {
@@ -59,7 +50,7 @@ export class AccidentController {
   }
 
   deleteAccident(accident) {
-    this.$http.delete(`/api/accident/${accident._id}`);
+    this.$http.delete(`/api/accidents/${accident._id}`);
   }
 
   getPDF(){
