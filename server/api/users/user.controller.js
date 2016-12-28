@@ -130,13 +130,35 @@ export function authCallback(req, res) {
 }
 // change role users
 export function ChangeRole(req, res) {
-  var userId = req.params.id;
+  var userId = req.body.id;
   var newRole = String(req.body.newRole);
 
   return User.findById(userId).exec()
     .then(user => {
       if(user) {
         user.role = newRole;
+
+        return user.save()
+          .then(() => {
+            res.json(user);
+          })
+          .catch(validationError(res));
+      } else {
+        return res.status(403).end();
+      }
+    });
+}
+
+
+// add an deviceToken
+export function createDeviceToken(req, res) {
+  var userId = req.body.id;
+  var deviceToken = String(req.body.deviceToken);
+
+  return User.findById(userId).exec()
+    .then(user => {
+      if(user) {
+        user.deviceToken = deviceToken;
 
         return user.save()
           .then(() => {

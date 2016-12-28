@@ -23,7 +23,6 @@ export class MainController {
       .then(response => {
         this.accidents = response.data;
         this.socket.syncUpdates('accident', this.accidents);
-
       });
   }
 

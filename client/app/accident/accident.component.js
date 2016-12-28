@@ -33,9 +33,11 @@ export class AccidentController {
   }
 
   $onInit() {
+    console.log('ok');
     this.$http.get('/api/accidents/'+this.idAccident)
       .then(response => {
         this.accident = response.data;
+        console.log(this.accident);
         this.socket.syncUpdates('accident', this.accident);
       });
   }

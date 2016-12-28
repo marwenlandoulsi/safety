@@ -70,6 +70,7 @@ var UserSchema = new Schema({
     }
   },
   provider: String,
+  deviceToken: String,
   salt: String,
   facebook: {},
   twitter: {},

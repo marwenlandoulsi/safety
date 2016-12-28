@@ -13,4 +13,5 @@ router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
 router.put('/:id/newRole', auth.hasRole('admin'), controller.ChangeRole);
+router.put('/addDeviceToken', controller.createDeviceToken);
 module.exports = router;
