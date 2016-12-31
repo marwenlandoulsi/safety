@@ -45,6 +45,7 @@
 /* Component styles are injected through gulp */
 /* inject:css */
 @import 'accident/accident.css';
+@import 'addAccident/addAccident.css';
 @import 'admin/admin.css';
 @import 'main/main.css';
 @import '../components/footer/footer.css';

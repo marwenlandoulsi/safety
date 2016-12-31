@@ -27,6 +27,7 @@ export class AccidentController {
     this.currentPath = $location.path();
     this.isRescuer = Auth.isRescuerSync;
     this.isAdmin = Auth.isAdminSync();
+
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('accident');
     });
@@ -37,7 +38,6 @@ export class AccidentController {
     this.$http.get('/api/accidents/'+this.idAccident)
       .then(response => {
         this.accident = response.data;
-        console.log(this.accident);
         this.socket.syncUpdates('accident', this.accident);
       });
   }
@@ -64,6 +64,7 @@ export class AccidentController {
         }
       );
   }
+
 }
 
 export default angular.module('safetyWayApp.accident', [uiRouter, 'safetyWayApp.auth'])

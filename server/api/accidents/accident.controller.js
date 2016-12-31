@@ -16,12 +16,12 @@ import User from '../users/user.model';
 
 var FCM = require('fcm-push');
 var serverkey = 'AAAABSIc1-A:APA91bEOOFscXqyLcHMW_ZoEs5dM6N9aEr-oAc9_Yn3MGl0stT10xb7Aay3I4S4z0mT1XyxTck5llYBvwBlzyW7mzJdqj8wxQoouxm2j65cF-ySnI4NbjAt56OSmNerUAZHr1uIsAwWp';
-var fcm = FCM(serverkey);
+
 var pdf = require('pdfkit');
 var fs = require('fs');
 var GoogleMapsAPI = require('googlemaps');
 var util = require('util');
-
+var gcm = require('node-gcm');
 var PdfPrinter = require('pdfmake/src/printer');
 
 var fonts = {
@@ -502,4 +502,46 @@ var getUser = function(id, callback) {
         callback(user);
         return;
       });
+};
+
+var sendNotification = function(fcm, token) {
+ /* var message = {
+    to: token, // required fill with device token or topics
+    notification: {
+      title: 'Title of your push notification',
+      body: 'Body of your push notification'
+    }
+  };
+
+  fcm.send(message, function(err, response){
+    if (err) {
+      console.log("Something has gone wrong!");
+    } else {
+      console.log("Successfully sent with response: ", response);
+    }
+  });*/
+};
+export function send(req, res) {
+ /* var keyServer ='AAAAFRFeCzY:APA91bFl6fZOfua9gwqJsucnyXIoAlTkUIqE4gXP_lLz0joscFph2Ls_c4IkfAyWLDF0WTpz6U1MIiyYZcJNB66CxBDGUjtBg7TlZi41xVmwlW9yjGiN0N_4d5QtetNaBRZmbxzdQeOdQAh7ivPocuyMjkrh8NxACw';
+  var fcm = new FCM(keyServer);
+
+  if(sendNotification(fcm, 'd5JfjOGZR4A:APA91bG_Ywe2LlIsGhzogw1By-c28za8lxZoMkC0d0OH3FWG6J6f-dOS3WG5P5MqvepVO0zpdpXLuBbHoherXGJPLPeCUHc4em6jtHrAFO-qNL2qwyHumdkhM4S-CDpxTeipRaLv3LCW')
+){
+    return res.status(200).end();
+  }else{
+    return res.status(400).end();
+  }*/
+  var message = new gcm.Message();
+  message.addNotification({
+    title: 'Alert!!!',
+    body: 'Abnormal data access',
+    icon: 'ic_launcher'
+  });
+  var sender = new gcm.Sender('AIzaSyD_agkFeIf6LIxdWvy67Itkc57LGPk3xdQ');
+  var regTokens = ['APA91bGnstcW1q_V9DLi291a8PKVRQde130blR3rmFQdFPFHPInE-7b307xcr3UbZNseAoyew56uYgkoWyHR40uhkU2TrNezzXLvqJkOGvoz6u8_y2H8Et9uTVjSBGGAMItx-VftoNCl'];
+
+  sender.send(message, { registrationTokens: regTokens }, function (err, response) {
+    if(err) console.error(err);
+    else 	console.log(response);
+  });
 }

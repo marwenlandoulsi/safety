@@ -1,0 +1,57 @@
+<div class="container">
+  <!--
+            <button type="button" class="btn btn-default"  onclick="initMap()">Geolocate the accident</button>
+            <hr>
+
+            <div id="map" style="width: 500px; height: 400px"> </div>
+            <div id="current">Nothing yet...</div>
+            <div id="lat"></div>
+  -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Add new accident</h1>
+      </div>
+      <div class="col-sm-12">
+        <form class="form" name="form">
+
+          <div class="form-group">
+            <label>Address</label>
+
+            <!-- <input type="text" name="address" class="form-control" ng-model="$ctrl.accident.address"
+                    required/>-->
+            <input places-auto-complete size=80 name="address" class="form-control"
+                   ng-model="$ctrl.accident.address" ng-init="$ctrl.accident.address=$ctrl.place.formatted_address"
+                   on-place-changed="$ctrl.placeChanged()" required/> <br/>
+          </div>
+
+          <div class="form-group">
+            <label>Description</label>
+
+            <input type="text" name="name" class="form-control" ng-model="$ctrl.accident.name"
+                   required/>
+
+          </div>
+
+          <div>
+            <button class="btn btn-inverse btn-lg btn-register" ng-click="$ctrl.addAccident()">
+              Submit
+            </button>
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--<hr> -->
+  </div>
+
+
+  <div>
+    Address = {{$ctrl.place.formatted_address}} <br/>
+    Location: {{$ctrl.place.geometry.location}}<br/>
+  </div>
+  address : {{$ctrl.accident.address}}
+
+  <ng-map id="map"  center="[40.74, -74.18]"></ng-map>
+
+</div>

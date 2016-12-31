@@ -132,7 +132,7 @@ export function authCallback(req, res) {
 export function ChangeRole(req, res) {
   var userId = req.body.id;
   var newRole = String(req.body.newRole);
-
+  console.log(userId);
   return User.findById(userId).exec()
     .then(user => {
       if(user) {

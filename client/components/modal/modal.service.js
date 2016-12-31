@@ -3,6 +3,7 @@
 import angular from 'angular';
 
 export function Modal($rootScope, $uibModal) {
+  'ngInject';
   /**
    * Opens a modal
    * @param  {Object} scope      - an object to be merged with modal's scope
@@ -63,6 +64,43 @@ export function Modal($rootScope, $uibModal) {
               }]
             }
           }, 'modal-danger');
+
+          deleteModal.result.then(function(event) {
+            del.apply(event, args);
+          });
+        };
+      },
+      change(del = angular.noop) {
+        /**
+         * Open a delete confirmation modal
+         * @param  {String} name   - name or info to show on modal
+         * @param  {All}           - any additional args are passed straight to del callback
+         */
+        return function() {
+          var args = Array.prototype.slice.call(arguments);
+          var name = args.shift();
+          var deleteModal;
+
+          deleteModal = openModal({
+            modal: {
+              dismissable: true,
+              title: 'Confirm Change',
+              html: `<p>Are you sure you want to change the role from <strong>${name}</strong> ?</p>`,
+              buttons: [{
+                classes: 'btn-warning',
+                text: 'Submit',
+                click(e) {
+                  deleteModal.close(e);
+                }
+              }, {
+                classes: 'btn-default',
+                text: 'Cancel',
+                click(e) {
+                  deleteModal.dismiss(e);
+                }
+              }]
+            }
+          }, 'modal-warning');
 
           deleteModal.result.then(function(event) {
             del.apply(event, args);

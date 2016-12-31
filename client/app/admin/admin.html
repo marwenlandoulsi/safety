@@ -1,8 +1,9 @@
 <div class="container">
   <label for="filter">Filter results</label>
+
   <input id="filter" type="text", name="filter", ng-model="textFilter">
   <ul class="list-group user-list">
-    <li class="list-group-item" ng-repeat="user in admin.users | filter : textFilter" ng-show="user.role != 'admin'">
+    <li class="list-group-item" dir-paginate="user in admin.users | filter : textFilter | itemsPerPage:6" ng-show="user.role != 'admin'">
 	    <div class="user-info" >
 	        <strong>{{user.firstName}}  {{user.lastName}}</strong>  <span class="text-muted"> : {{user.role}}</span><br>
 	        <span class="text-muted">{{user.email}}</span>
@@ -23,4 +24,5 @@
       <a title="delete user"  ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
     </li>
   </ul>
+  <dir-pagination-controls max-size="5" direction-links="true"></dir-pagination-controls>
 </div>

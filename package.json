@@ -48,6 +48,7 @@
     "multer": "^1.2.0",
     "ng2-map": "^0.12.2",
     "ng2-pagination": "^1.0.1",
+    "ngmap": "^1.17.8",
     "node-gcm": "^0.14.4",
     "passport": "~0.3.0",
     "passport-facebook": "^2.0.0",

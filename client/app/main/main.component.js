@@ -12,9 +12,8 @@ export class MainController {
   constructor($http, $scope, socket) {
     this.$http = $http;
     this.socket = socket;
-
     $scope.$on('$destroy', function() {
-      socket.unsyncUpdates('accident');
+      socket.unsyncUpdates('accidents');
     });
   }
 
@@ -38,6 +37,8 @@ export class MainController {
   deleteAccident(accident) {
     this.$http.delete(`/api/accidents/${accident._id}`);
   }
+
+
 }
 
 export default angular.module('safetyWayApp.main', [uiRouter])
