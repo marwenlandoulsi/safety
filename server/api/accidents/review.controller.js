@@ -88,6 +88,7 @@ module.exports.create = function(req, res) {
 
 
 var doAddReview = function(req, res, accident, err) {
+  req.setHeader('Content-Type', 'multipart/form-data; boundary=-----------------------------------------------rtbdt62h4d6bhte6rt4');
   if (!accident) {
     sendJSONresponse(res, 404, "accidentid not found");
   } else {

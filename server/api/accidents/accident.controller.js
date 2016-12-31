@@ -504,7 +504,7 @@ var getUser = function(id, callback) {
       });
 };
 
-var sendNotification = function(fcm, token) {
+var sendNotification = function(idAccident, tokens) {
  /* var message = {
     to: token, // required fill with device token or topics
     notification: {
@@ -520,7 +520,34 @@ var sendNotification = function(fcm, token) {
       console.log("Successfully sent with response: ", response);
     }
   });*/
+
+  var message = new gcm.Message({
+    data: {
+      id: idAccident
+    },
+    notification: {
+      title: "New Accident",
+      icon: "ic_launcher",
+      body: "Attention there is new accident."
+    }
+  });
+  /*message.addNotification({
+   title: 'Alert!!!',
+   body: 'Abnormal data access',
+   icon: 'ic_launcher'
+   });*/
+  var sender = new gcm.Sender('AIzaSyD_agkFeIf6LIxdWvy67Itkc57LGPk3xdQ');
+  //var regTokens = ['APA91bGnstcW1q_V9DLi291a8PKVRQde130blR3rmFQdFPFHPInE-7b307xcr3UbZNseAoyew56uYgkoWyHR40uhkU2TrNezzXLvqJkOGvoz6u8_y2H8Et9uTVjSBGGAMItx-VftoNCl'];
+ // var regTokens = tokens;
+
+  sender.send(message, { registrationTokens: tokens }, function (err, response) {
+    if(err) console.error(err);
+    else 	console.log(response);
+  });
+
+
 };
+
 export function send(req, res) {
  /* var keyServer ='AAAAFRFeCzY:APA91bFl6fZOfua9gwqJsucnyXIoAlTkUIqE4gXP_lLz0joscFph2Ls_c4IkfAyWLDF0WTpz6U1MIiyYZcJNB66CxBDGUjtBg7TlZi41xVmwlW9yjGiN0N_4d5QtetNaBRZmbxzdQeOdQAh7ivPocuyMjkrh8NxACw';
   var fcm = new FCM(keyServer);
@@ -531,17 +558,31 @@ export function send(req, res) {
   }else{
     return res.status(400).end();
   }*/
-  var message = new gcm.Message();
-  message.addNotification({
+  //var message = new gcm.Message();
+  var message = new gcm.Message({
+    data: {
+      id: '58617823e2a8a4fa99b9162d'
+    },
+    notification: {
+      title: "New Accident",
+      icon: "ic_launcher",
+      body: "Attention there is new accident."
+    }
+  });
+  /*message.addNotification({
     title: 'Alert!!!',
     body: 'Abnormal data access',
     icon: 'ic_launcher'
-  });
+  });*/
   var sender = new gcm.Sender('AIzaSyD_agkFeIf6LIxdWvy67Itkc57LGPk3xdQ');
   var regTokens = ['APA91bGnstcW1q_V9DLi291a8PKVRQde130blR3rmFQdFPFHPInE-7b307xcr3UbZNseAoyew56uYgkoWyHR40uhkU2TrNezzXLvqJkOGvoz6u8_y2H8Et9uTVjSBGGAMItx-VftoNCl'];
 
   sender.send(message, { registrationTokens: regTokens }, function (err, response) {
-    if(err) console.error(err);
-    else 	console.log(response);
+    if(err) {console.error(err);
+      return res.status(400).end();}
+    else {	console.log(response);
+      return res.status(200).end();
+    }
+
   });
 }
