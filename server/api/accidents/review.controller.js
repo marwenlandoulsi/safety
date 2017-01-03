@@ -88,9 +88,6 @@ module.exports.create = function(req, res) {
 
 
 var doAddReview = function(req, res, accident, err) {
-    console.log(req.data);
-  console.log(req.body);
-
   if (!accident) {
     sendJSONresponse(res, 404, "accidentid not found");
   } else {

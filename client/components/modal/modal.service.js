@@ -85,7 +85,7 @@ export function Modal($rootScope, $uibModal) {
             modal: {
               dismissable: true,
               title: 'Confirm Change',
-              html: `<p>Are you sure you want to change the role from <strong>${name}</strong> ?</p>`,
+              html: `<p>Are you sure you want to change the role of user to <strong>${name}</strong> ?</p>`,
               buttons: [{
                 classes: 'btn-warning',
                 text: 'Submit',

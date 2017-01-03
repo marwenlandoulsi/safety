@@ -7,9 +7,6 @@ import NgMap from 'ngmap';
 export class AddAccidentController {
   $http;
   socket;
-
-  accident = {};
-  user = {};
   idAccident;
   isLoggedIn: Function;
   isRescuer: Function;
@@ -19,11 +16,14 @@ export class AddAccidentController {
   pathPdf;
   isPath = false;
   ngmap;
- map;
+  map;
   name;
+  $state;
+  errors = {};
+  submitted = false;
 
   /*@ngInject*/
-  constructor($http, $scope, socket, $stateParams, Auth, $location, NgMap) {
+  constructor($http, $scope, socket, $stateParams, Auth, $location, NgMap, $state) {
     this.$http = $http;
     this.socket = socket;
     this.idAccident = $stateParams.accidentId;
@@ -32,33 +32,84 @@ export class AddAccidentController {
     this.currentPath = $location.path();
     this.isRescuer = Auth.isRescuerSync;
     this.isAdmin = Auth.isAdminSync();
-    this.ngmap = NgMap;
+    this.$state=$state;
+    /*this.ngmap = NgMap;
+    this.ngmap.getMap("map").then((map) => {
+      this.map = map;
 
+    });*/
+    this.ngmap=NgMap;
+    $scope.placeChanged = function() {
+      $scope.place = this.getPlace();
+      $scope.map.setCenter($scope.place.geometry.location);
+
+    };
+    $scope.$on('mapInitialized', function(event, evtMap) {
+      var map = evtMap;
+        var latLng = new google.maps.LatLng(0, 0);
+        var marker = new google.maps.Marker({position: latLng});
+        google.maps.event.addListener(marker, 'click', function() {
+
+          alert("this is marker " + i);
+        });
+     // $scope.markerClusterer = new MarkerClusterer(map, $scope.dynMarkers, {});
+    });
+/*
+    google.maps.event.addListener(marker, 'dragend', function (event) {
+      document.getElementById("latbox").value = this.getPosition().lat();
+      document.getElementById("lngbox").value = this.getPosition().lng();
+    });*/
+    /*
+    var marker = new NgMap.maps.Marker({position:$scope.place.geometry.location});
+
+    NgMap.event.addListener(marker, 'dragend', function (event) {
+      console.log(this.getPosition().lat()) ;
+     // document.getElementById("lngbox").value = this.getPosition().lng();
+    });*/
+
+    NgMap.getMap().then(function(map) {
+      $scope.map = map;
+    });/*
+    var marker = new google.maps.Marker({position: 'current'});
+    google.maps.event.addListener(marker, 'click', function() {
+
+      alert("this is marker " + i);
+    });
+*/
   }
+/*
   placeChanged() {
-    this.ngmap.getMap("map").then(function (map) {
+    this.ngmap.getMap("map").then((map) => {
       this.map = map;
-      console.log(map);
-    });
+    })
     this.map.setCenter(this.getPlace().geometry.location);
-  }
-  $onInit() {
+  }*/
 
-    this.ngmap.getMap("map").then(function (map) {
-      this.map = map;
-      console.log(map);
-    });
-  }
 
-  addAccident() {
+  addAccident(name, address, lat, lng) {
 
-    console.log('add ', this.accident);
+    if (name && address && lat && lng)
+    {
+      var accident = {
+        address : address,
+        name: name,
+        coords : [lat, lng],
+        active: true
+      };
+      this.$http.post('/api/accidents', accident).then(
+        console.log('accident ', accident)
+      );
+
+
+
+    }
 
     //this.$http.post('/api/accidents/', this.accident);
   }
 
-
-
+  ondrag(){
+    console.log("ooooooooooooooool");
+  }
 
 }
 

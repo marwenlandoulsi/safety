@@ -1,3 +1,5 @@
+tt
+
 <div class="container">
   <!--
             <button type="button" class="btn btn-default"  onclick="initMap()">Geolocate the accident</button>
@@ -7,6 +9,7 @@
             <div id="current">Nothing yet...</div>
             <div id="lat"></div>
   -->
+
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
@@ -16,25 +19,32 @@
         <form class="form" name="form">
 
           <div class="form-group">
+            <label>Description</label>
+
+            <input type="text" name="name" class="form-control" ng-model="name"
+                   required/>
+
+          </div>
+          <div class="form-group">
             <label>Address</label>
 
             <!-- <input type="text" name="address" class="form-control" ng-model="$ctrl.accident.address"
                     required/>-->
-            <input places-auto-complete size=80 name="address" class="form-control"
-                   ng-model="$ctrl.accident.address" ng-init="$ctrl.accident.address=$ctrl.place.formatted_address"
-                   on-place-changed="$ctrl.placeChanged()" required/> <br/>
+            <input class="form-control" places-auto-complete size=80
+                   ng-model="address"
+                   on-place-changed="placeChanged()" required />
+            <br/>
+            <ng-map center="current-location" zoom="7">
+              <marker position="{{address}}"  title="Place of the Accident"  draggable="true"></marker>
+            </ng-map>
           </div>
 
-          <div class="form-group">
-            <label>Description</label>
-
-            <input type="text" name="name" class="form-control" ng-model="$ctrl.accident.name"
-                   required/>
-
-          </div>
+          marker :{{ marker.position }}
+          place : {{place.geometry.location.lat()}}
+          {{place.geometry.location.lng() }}
 
           <div>
-            <button class="btn btn-inverse btn-lg btn-register" ng-click="$ctrl.addAccident()">
+            <button class="btn btn-inverse btn-lg btn-register" ng-click="$ctrl.addAccident(name, address,  place.geometry.location.lat(), place.geometry.location.lng() )">
               Submit
             </button>
 
@@ -45,13 +55,5 @@
     <!--<hr> -->
   </div>
 
-
-  <div>
-    Address = {{$ctrl.place.formatted_address}} <br/>
-    Location: {{$ctrl.place.geometry.location}}<br/>
-  </div>
-  address : {{$ctrl.accident.address}}
-
-  <ng-map id="map"  center="[40.74, -74.18]"></ng-map>
-
 </div>
+

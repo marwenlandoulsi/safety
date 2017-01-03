@@ -274,6 +274,7 @@ UserSchema.methods = {
 
     if(!callback) {
       return crypto.pbkdf2Sync(password, salt, defaultIterations, defaultKeyLength)
+      return crypto.pbkdf2Sync(password, salt, defaultIterations, defaultKeyLength)
         .toString('base64');
     }
 

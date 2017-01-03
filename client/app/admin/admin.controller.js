@@ -48,7 +48,7 @@ export default class AdminController {
         }
     });
 
-    changeRoleConfirmationModal(+user.role+' to '+value, user);
+    changeRoleConfirmationModal(value, user);
 
   }
 }

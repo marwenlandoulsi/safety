@@ -18,7 +18,13 @@ var storage = multer.diskStorage({
     });
   }
 });
-var uploader = multer({ storage: storage});
+
+var uploader = multer({
+  storage: storage
+});
+
+
+
 //get all accidents
 router.get('/', auth.hasRole('police'), controller.index);
 //get all active accidents
@@ -31,7 +37,7 @@ router.post('/', auth.isAuthenticated(), uploader.array('upload', 10), controlle
 router.put('/:id', auth.hasRole('police'), controller.upsert);
 router.patch('/:id', auth.isAuthenticated(), controller.patch);
 router.delete('/:id', auth.hasRole('police'), controller.destroy);
-router.post('/sendNotification', controller.send);
+
 //show pdf
 router.get('/:id/pdf', controller.createPDF);
 
