@@ -134,9 +134,10 @@ export function create(req, res) {
   var medias = [];
   var newReviews = {};
   if (!req.body.saverity && !req.body.reviewText && !req.files) {
-    sendJSONresponse(res, 200, {
+    /*sendJSONresponse(res, 200, {
       error: 'no observation (review)'
-    });
+    });*/
+    console.log('no observation (review)')
   } else {
     newReviews = {
       saverity: req.body.saverity,
