@@ -33,10 +33,10 @@ import './app.css';
 import AddAccidentComponent from './addAccident/addAccident.component';
 import Modal from '../components/modal/modal.service';
 import ngmap from 'ngmap';
-import { Ng2MapModule} from 'ng2-map';
+
 angular.module('safetyWayApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,
   uiBootstrap, _Auth, account, AddAccidentComponent,
-  accident, admin, navbar, footer, main, constants, socket, util, angularUtilsPagination, Modal, ngmap, Ng2MapModule
+  accident, admin, navbar, footer, main, constants, socket, util, angularUtilsPagination, Modal, ngmap
 ])
   .config(routeConfig)
   .run(function ($rootScope, $location, Auth) {
