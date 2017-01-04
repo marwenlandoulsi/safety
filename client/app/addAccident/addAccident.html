@@ -1,5 +1,3 @@
-tt
-
 <div class="container">
   <!--
             <button type="button" class="btn btn-default"  onclick="initMap()">Geolocate the accident</button>
@@ -32,19 +30,15 @@ tt
                     required/>-->
             <input class="form-control" places-auto-complete size=80
                    ng-model="address"
-                   on-place-changed="placeChanged()" required />
+                   on-place-changed="placeChanged()" required/>
             <br/>
             <ng-map center="current-location" zoom="7">
-              <marker position="{{address}}"  title="Place of the Accident"  draggable="true"></marker>
+              <marker position="{{address}}" title="Place of the Accident" draggable="true"></marker>
             </ng-map>
           </div>
-
-          marker :{{ marker.position }}
-          place : {{place.geometry.location.lat()}}
-          {{place.geometry.location.lng() }}
-
           <div>
-            <button class="btn btn-inverse btn-lg btn-register" ng-click="$ctrl.addAccident(name, address,  place.geometry.location.lat(), place.geometry.location.lng() )">
+            <button class="btn btn-inverse btn-lg btn-register"
+                    ng-click="$ctrl.addAccident(name, address,  place.geometry.location.lat(), place.geometry.location.lng() )">
               Submit
             </button>
 
