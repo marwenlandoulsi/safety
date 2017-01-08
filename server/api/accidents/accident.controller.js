@@ -188,7 +188,7 @@ export function create(req, res) {
       regTokens.push(user.deviceToken);
     });
     if (regTokens.length > 0) {
-      sendNotification(res, newAccident._id, regTokens);
+      sendNotification(res, newAccident, regTokens);
     } else {
       sendJSONresponse(res, 304, {
         "error": "no tokens found"
@@ -576,11 +576,13 @@ var getAllUser = function (res, callback) {
     });
 };
 
-var sendNotification = function (res, idAccident, regTokens) {
+var sendNotification = function (res, accident, regTokens) {
 
   var message = new gcm.Message({
     data: {
-      id: idAccident
+      id: accident._id,
+      lng: accident.coords[0],
+      lat:accident.coords[1]
     },
     notification: {
       title: "New Accident added",
